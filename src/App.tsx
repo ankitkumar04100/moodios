@@ -3,10 +3,38 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import Index from "./pages/Index.tsx";
-import NotFound from "./pages/NotFound.tsx";
+import AppLayout from "@/components/AppLayout";
+import { useEmotionSensing } from "@/hooks/useEmotionSensing";
+import HomePage from "./pages/HomePage";
+import ModesPage from "./pages/ModesPage";
+import ShieldPage from "./pages/ShieldPage";
+import FocusPage from "./pages/FocusPage";
+import CreativePage from "./pages/CreativePage";
+import TimelinePage from "./pages/TimelinePage";
+import SettingsPage from "./pages/SettingsPage";
+import AboutPage from "./pages/AboutPage";
+import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
+
+function AppInner() {
+  useEmotionSensing();
+  return (
+    <AppLayout>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/modes" element={<ModesPage />} />
+        <Route path="/shield" element={<ShieldPage />} />
+        <Route path="/focus" element={<FocusPage />} />
+        <Route path="/creative" element={<CreativePage />} />
+        <Route path="/timeline" element={<TimelinePage />} />
+        <Route path="/settings" element={<SettingsPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </AppLayout>
+  );
+}
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -14,11 +42,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <AppInner />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
