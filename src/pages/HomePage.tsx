@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import { useEmotionStore } from "@/stores/emotionStore";
 import { Link } from "react-router-dom";
+import { useEmotionStore } from "@/stores/emotionStore";
 import { Zap, Brain, Activity, Target, Sparkles, PlayCircle } from "lucide-react";
 
 function MiniTimeline() {
@@ -30,7 +30,6 @@ export default function HomePage() {
   return (
     <div className="p-6 max-w-5xl mx-auto space-y-6">
       
-      {/* HEADER */}
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
         <p className="text-sm text-mode-primary uppercase tracking-widest">
           MoodiOS • Emotional Engine
@@ -41,7 +40,6 @@ export default function HomePage() {
         <p className="text-muted-foreground">Real-time emotional sensing.</p>
       </motion.div>
 
-      {/* SENSING CARD */}
       <motion.div
         className="glass p-5 rounded-xl flex justify-between items-center"
         initial={{ opacity: 0 }}
@@ -68,14 +66,12 @@ export default function HomePage() {
         </button>
       </motion.div>
 
-      {/* LIVE METERS */}
       {sensingActive && (
         <motion.div
           className="glass p-5 rounded-xl space-y-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
         >
-          {/* Stress */}
           <div className="flex items-center gap-3">
             <Activity size={16} className="text-mode-primary" />
             <span className="text-sm text-muted-foreground">Stress</span>
@@ -85,12 +81,9 @@ export default function HomePage() {
                 animate={{ width: `${emotion.stressLevel * 100}%` }}
               />
             </div>
-            <span className="text-sm text-foreground font-medium">
-              {Math.round(emotion.stressLevel * 100)}%
-            </span>
+            <span className="text-sm">{Math.round(emotion.stressLevel * 100)}%</span>
           </div>
 
-          {/* Energy */}
           <div className="flex items-center gap-3">
             <Zap size={16} className="text-mode-glow" />
             <span className="text-sm text-muted-foreground">Energy</span>
@@ -100,14 +93,11 @@ export default function HomePage() {
                 animate={{ width: `${emotion.energyLevel * 100}%` }}
               />
             </div>
-            <span className="text-sm text-foreground font-medium">
-              {Math.round(emotion.energyLevel * 100)}%
-            </span>
+            <span className="text-sm">{Math.round(emotion.energyLevel * 100)}%</span>
           </div>
         </motion.div>
       )}
 
-      {/* SUMMARY GRID */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
         {[
           { label: "Energy", value: emotion.energyLevel, icon: Zap },
@@ -123,7 +113,7 @@ export default function HomePage() {
           >
             <Icon size={18} className="mx-auto mb-2 text-mode-primary" />
             <p className="text-xs text-muted-foreground">{label}</p>
-            <p className="font-display text-xl text-foreground font-bold capitalize">
+            <p className="font-display text-xl font-bold text-foreground capitalize">
               {typeof value === "number"
                 ? `${Math.round(value * 100)}%`
                 : value}
@@ -132,7 +122,6 @@ export default function HomePage() {
         ))}
       </div>
 
-      {/* TIMELINE */}
       {sensingActive && (
         <motion.div
           className="glass p-5 rounded-xl"
