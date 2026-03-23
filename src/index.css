@@ -1,88 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
 
+    --background: 220 20% 97%;
+    --foreground: 220 25% 10%;
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    --card-foreground: 220 25% 10%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 220 25% 10%;
+    --primary: 200 80% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 15% 92%;
+    --secondary-foreground: 220 25% 15%;
+    --muted: 220 15% 94%;
+    --muted-foreground: 220 10% 50%;
+    --accent: 200 80% 45%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 15% 90%;
+    --input: 220 15% 90%;
+    --ring: 200 80% 45%;
+    --radius: 0.75rem;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Mode-specific tokens */
+    --mode-primary: 200 80% 45%;
+    --mode-glow: 200 80% 60%;
+    --mode-surface: 200 20% 96%;
+    --mode-accent: 200 70% 50%;
+    --mode-gradient-start: 200 80% 45%;
+    --mode-gradient-end: 220 70% 55%;
+    --mode-motion-duration: 0.6s;
+    --mode-motion-intensity: 1;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Glass tokens */
+    --glass-bg: 0 0% 100% / 0.7;
+    --glass-border: 0 0% 100% / 0.3;
+    --glass-shadow: 220 60% 50% / 0.08;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    /* Cinematic tokens */
+    --bloom-color: 200 80% 60% / 0.15;
+    --grain-opacity: 0.03;
+    --parallax-depth: 1;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 225 25% 6%;
+    --foreground: 210 30% 92%;
+    --card: 225 25% 9%;
+    --card-foreground: 210 30% 92%;
+    --popover: 225 25% 9%;
+    --popover-foreground: 210 30% 92%;
+    --primary: 200 80% 55%;
+    --primary-foreground: 225 25% 6%;
+    --secondary: 225 20% 14%;
+    --secondary-foreground: 210 30% 85%;
+    --muted: 225 20% 14%;
+    --muted-foreground: 220 15% 55%;
+    --accent: 200 80% 55%;
+    --accent-foreground: 225 25% 6%;
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 225 20% 16%;
+    --input: 225 20% 16%;
+    --ring: 200 80% 55%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --glass-bg: 225 25% 10% / 0.6;
+    --glass-border: 0 0% 100% / 0.08;
+    --glass-shadow: 200 80% 50% / 0.1;
+    --bloom-color: 200 80% 60% / 0.2;
+    --grain-opacity: 0.04;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -92,14 +96,139 @@ All colors MUST be HSL.
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
-}
 
-@layer base {
+  /* MOOD THEMES */
+  .mood-calm {
+    --mode-primary: 175 60% 42%;
+    --mode-glow: 175 55% 55%;
+    --mode-surface: 175 25% 95%;
+    --mode-accent: 175 50% 48%;
+    --mode-gradient-start: 175 60% 42%;
+    --mode-gradient-end: 195 50% 50%;
+    --mode-motion-duration: 1.2s;
+    --mode-motion-intensity: 0.4;
+    --bloom-color: 175 60% 50% / 0.12;
+  }
+  .mood-calm.dark {
+    --mode-surface: 175 25% 10%;
+  }
+
+  .mood-focus {
+    --mode-primary: 220 85% 55%;
+    --mode-glow: 220 90% 65%;
+    --mode-surface: 225 30% 96%;
+    --mode-accent: 220 80% 58%;
+    --mode-gradient-start: 220 85% 55%;
+    --mode-gradient-end: 240 70% 60%;
+    --mode-motion-duration: 0.3s;
+    --mode-motion-intensity: 0.6;
+    --bloom-color: 220 85% 60% / 0.18;
+  }
+  .mood-focus.dark {
+    --mode-surface: 225 30% 8%;
+  }
+
+  .mood-creative {
+    --mode-primary: 320 75% 55%;
+    --mode-glow: 30 90% 60%;
+    --mode-surface: 330 25% 96%;
+    --mode-accent: 320 70% 58%;
+    --mode-gradient-start: 320 75% 55%;
+    --mode-gradient-end: 30 85% 55%;
+    --mode-motion-duration: 0.5s;
+    --mode-motion-intensity: 1.2;
+    --bloom-color: 320 75% 55% / 0.2;
+  }
+  .mood-creative.dark {
+    --mode-surface: 330 25% 8%;
+  }
+
+  .mood-tired {
+    --mode-primary: 35 60% 50%;
+    --mode-glow: 270 30% 55%;
+    --mode-surface: 35 20% 95%;
+    --mode-accent: 35 50% 52%;
+    --mode-gradient-start: 35 60% 50%;
+    --mode-gradient-end: 270 30% 50%;
+    --mode-motion-duration: 2s;
+    --mode-motion-intensity: 0.2;
+    --bloom-color: 35 50% 50% / 0.1;
+  }
+  .mood-tired.dark {
+    --mode-surface: 35 20% 8%;
+  }
+
+  .mood-motivated {
+    --mode-primary: 0 75% 55%;
+    --mode-glow: 40 90% 55%;
+    --mode-surface: 0 20% 96%;
+    --mode-accent: 0 70% 55%;
+    --mode-gradient-start: 0 75% 55%;
+    --mode-gradient-end: 40 85% 52%;
+    --mode-motion-duration: 0.25s;
+    --mode-motion-intensity: 1.5;
+    --bloom-color: 0 75% 55% / 0.2;
+  }
+  .mood-motivated.dark {
+    --mode-surface: 0 20% 8%;
+  }
+
   * {
     @apply border-border;
   }
-
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+/* Cinematic film grain overlay */
+.film-grain::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: var(--grain-opacity);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+}
+
+/* Glass morphism utility */
+.glass {
+  background: hsl(var(--glass-bg));
+  backdrop-filter: blur(20px) saturate(1.5);
+  border: 1px solid hsl(var(--glass-border));
+  box-shadow: 0 8px 32px hsl(var(--glass-shadow));
+}
+
+.glass-subtle {
+  background: hsl(var(--glass-bg));
+  backdrop-filter: blur(12px) saturate(1.3);
+  border: 1px solid hsl(var(--glass-border));
+}
+
+/* Cinematic bloom glow */
+.bloom {
+  box-shadow: 0 0 60px 20px hsl(var(--bloom-color)),
+              0 0 120px 40px hsl(var(--bloom-color));
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
