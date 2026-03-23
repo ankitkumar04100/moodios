@@ -1,14 +1,7 @@
 import { motion } from "framer-motion";
 import { useEmotionStore } from "@/stores/emotionStore";
 import { Link } from "react-router-dom";
-import {
-  Zap,
-  Brain,
-  Activity,
-  Target,
-  Sparkles,
-  PlayCircle,
-} from "lucide-react";
+import { Zap, Brain, Activity, Target, Sparkles, PlayCircle } from "lucide-react";
 
 function MiniTimeline() {
   const { recentHistory } = useEmotionStore();
@@ -32,171 +25,85 @@ function MiniTimeline() {
 }
 
 export default function HomePage() {
-  const { emotion, activeMood, sensingActive, toggleSensing } =
-    useEmotionStore();
+  const { emotion, activeMood, sensingActive, toggleSensing } = useEmotionStore();
 
   return (
     <div className="p-6 max-w-5xl mx-auto space-y-6">
-
+      
       {/* HEADER */}
-      <motion.div
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-      >
-        <p className="text-sm text-mode-primary tracking-wider uppercase">
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+        <p className="text-sm text-mode-primary uppercase tracking-widest">
           MoodiOS • Emotional Engine
         </p>
-        <h1 className="font-display text-4xl font-bold text-foreground">
-          {activeMood.charAt(0).toUpperCase() + activeMood.slice(1)}
+        <h1 className="font-display text-4xl font-bold text-foreground capitalize">
+          {activeMood}
         </h1>
-        <p className="text-muted-foreground">
-          Real‑time emotion sensing and adaptive UI.
-        </p>
+        <p className="text-muted-foreground">Real-time emotional sensing.</p>
       </motion.div>
 
-      {/* SENSING MODULE */}
+      {/* SENSING CARD */}
       <motion.div
-        className="glass rounded-xl p-5 flex items-center justify-between"
+        className="glass p-5 rounded-xl flex justify-between items-center"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
       >
         <div>
-          <p className="font-display font-semibold text-foreground text-lg">
+          <p className="text-lg font-display font-semibold text-foreground">
             Emotion Sensing
           </p>
           <p className="text-muted-foreground text-sm">
-            {sensingActive
-              ? "Running in real time..."
-              : "Tap to start emotion detection"}
+            {sensingActive ? "Running…" : "Tap to activate"}
           </p>
         </div>
 
-        <motion.button
+        <button
           onClick={toggleSensing}
           className={`px-4 py-2 rounded-xl text-sm font-semibold ${
             sensingActive
               ? "bg-mode-accent/20 text-mode-accent"
               : "bg-mode-primary/20 text-mode-primary"
           }`}
-          whileTap={{ scale: 0.95 }}
         >
           {sensingActive ? "Stop" : "Start"}
-        </motion.button>
+        </button>
       </motion.div>
 
-      {/* LIVE BARS */}
+      {/* LIVE METERS */}
       {sensingActive && (
         <motion.div
-          className="glass rounded-xl p-5 space-y-4"
+          className="glass p-5 rounded-xl space-y-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
         >
           {/* Stress */}
           <div className="flex items-center gap-3">
-            <Activity className="text-mode-primary" size={16} />
-            <p className="text-sm text-muted-foreground">Stress</p>
-            <div className="flex-1 h-2 rounded-full bg-secondary overflow-hidden">
+            <Activity size={16} className="text-mode-primary" />
+            <span className="text-sm text-muted-foreground">Stress</span>
+            <div className="flex-1 h-2 bg-secondary rounded-full overflow-hidden">
               <motion.div
-                className="h-full rounded-full bg-mode-primary"
+                className="h-full bg-mode-primary"
                 animate={{ width: `${emotion.stressLevel * 100}%` }}
-                transition={{ duration: 0.5 }}
               />
             </div>
-            <span className="text-foreground text-sm font-medium">
+            <span className="text-sm text-foreground font-medium">
               {Math.round(emotion.stressLevel * 100)}%
             </span>
           </div>
 
           {/* Energy */}
           <div className="flex items-center gap-3">
-            <Zap className="text-mode-glow" size={16} />
-            <p className="text-sm text-muted-foreground">Energy</p>
-            <div className="flex-1 h-2 rounded-full bg-secondary overflow-hidden">
+            <Zap size={16} className="text-mode-glow" />
+            <span className="text-sm text-muted-foreground">Energy</span>
+            <div className="flex-1 h-2 bg-secondary rounded-full overflow-hidden">
               <motion.div
-                className="h-full rounded-full bg-mode-glow"
+                className="h-full bg-mode-glow"
                 animate={{ width: `${emotion.energyLevel * 100}%` }}
-                transition={{ duration: 0.5 }}
               />
             </div>
-            <span className="text-foreground text-sm font-medium">
+            <span className="text-sm text-foreground font-medium">
               {Math.round(emotion.energyLevel * 100)}%
             </span>
           </div>
-        </motion.div>
-      )}
-
-      {/* QUICK ACTIONS */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <motion.button
-          onClick={toggleSensing}
-          className="glass rounded-xl p-5 flex items-center gap-4 hover:scale-[1.02] transition-transform"
-          whileTap={{ scale: 0.97 }}
-        >
-          <div className="w-10 h-10 rounded-lg bg-mode-primary/15 flex items-center justify-center">
-            <PlayCircle size={20} className="text-mode-primary" />
-          </div>
-          <div>
-            <p className="font-display text-foreground font-semibold">
-              {sensingActive ? "Sensing Active" : "Enable Sensing"}
-            </p>
-            <p className="text-xs text-muted-foreground">
-              {sensingActive
-                ? `Confidence: ${Math.round(emotion.confidence * 100)}%`
-                : "Start real-time sensing"}
-            </p>
-          </div>
-        </motion.button>
-
-        <Link to="/focus">
-          <motion.div
-            className="glass rounded-xl p-5 flex items-center gap-4 hover:scale-[1.02] transition-transform"
-            whileTap={{ scale: 0.97 }}
-          >
-            <div className="w-10 h-10 rounded-lg bg-mode-accent/15 flex items-center justify-center">
-              <Target size={20} className="text-mode-accent" />
-            </div>
-            <div>
-              <p className="font-display text-foreground font-semibold">
-                Focus Tunnel
-              </p>
-              <p className="text-xs text-muted-foreground">
-                Enter deep work UI
-              </p>
-            </div>
-          </motion.div>
-        </Link>
-
-        <Link to="/creative">
-          <motion.div
-            className="glass rounded-xl p-5 flex items-center gap-4 hover:scale-[1.02] transition-transform"
-            whileTap={{ scale: 0.97 }}
-          >
-            <div className="w-10 h-10 rounded-lg bg-mode-glow/15 flex items-center justify-center">
-              <Sparkles size={20} className="text-mode-glow" />
-            </div>
-            <div>
-              <p className="font-display text-foreground font-semibold">
-                Creative Space
-              </p>
-              <p className="text-xs text-muted-foreground">
-                Capture ideas instantly
-              </p>
-            </div>
-          </motion.div>
-        </Link>
-      </div>
-
-      {/* TIMELINE */}
-      {sensingActive && (
-        <motion.div
-          className="glass rounded-xl p-5"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-        >
-          <p className="flex items-center gap-2 text-mode-primary font-semibold mb-3">
-            Recent Activity
-          </p>
-          <MiniTimeline />
         </motion.div>
       )}
 
@@ -210,10 +117,9 @@ export default function HomePage() {
         ].map(({ label, value, icon: Icon }, i) => (
           <motion.div
             key={label}
-            className="glass rounded-xl p-5 text-center"
-            initial={{ opacity: 0, y: 20 }}
+            className="glass p-5 rounded-xl text-center"
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: i * 0.05 }}
           >
             <Icon size={18} className="mx-auto mb-2 text-mode-primary" />
             <p className="text-xs text-muted-foreground">{label}</p>
@@ -225,6 +131,20 @@ export default function HomePage() {
           </motion.div>
         ))}
       </div>
+
+      {/* TIMELINE */}
+      {sensingActive && (
+        <motion.div
+          className="glass p-5 rounded-xl"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+        >
+          <p className="text-mode-primary font-semibold mb-3 flex items-center gap-2">
+            <Sparkles size={16} /> Recent Activity
+          </p>
+          <MiniTimeline />
+        </motion.div>
+      )}
     </div>
   );
 }
