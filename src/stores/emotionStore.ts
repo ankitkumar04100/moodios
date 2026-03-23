@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { fuseEmotion } from "@/core/emotion/fusionManager";
+import { fuseEmotion } from "@/core/emotion";
 
 export const useEmotionStore = create((set, get) => ({
   emotion: {
@@ -16,11 +16,11 @@ export const useEmotionStore = create((set, get) => ({
   sensingActive: false,
 
   async update(input) {
-    const result = await fuseEmotion(input, true);
+    const output = await fuseEmotion(input, true);
 
     set((state) => ({
-      emotion: result,
-      recentHistory: [...state.recentHistory, result].slice(-50),
+      emotion: output,
+      recentHistory: [...state.recentHistory, output].slice(-50),
     }));
   },
 
@@ -28,3 +28,4 @@ export const useEmotionStore = create((set, get) => ({
     set({ sensingActive: !get().sensingActive });
   },
 }));
+``
