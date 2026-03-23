@@ -1,16 +1,90 @@
-import { motion } from 'framer-motion';
-import { useEmotionStore } from '@/stores/emotionStore';
-import { MOOD_THEMES } from '@/types/emotion';
-import { PlayCircle, Target, Sparkles, BarChart3, Activity, Zap, Brain } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { motion } from "framer-motion";
+import { useEmotionStore } from "@/stores/emotionStore";
+import { Link } from "react-router-dom";
+import { Zap, Brain, Activity, Target, Sparkles } from "lucide-react";
 
-function MiniTimeline() {
-  const { recentHistory } = useEmotionStore();
-  const last20 = recentHistory.slice(-20);
-  if (last20.length < 2) return null;
+// 🌌 PARTICLE FIELD BACKDROP
+function ParticleField() {
+  const particles = Array.from({ length: 40 });
 
   return (
-    <div className="flex items-end gap-0.5 h-12">
+    <div className="absolute inset-0 overflow-hidden -z-10 opacity-50">
+      {particles.map((_, i) => (
+        <motion.div
+          key={i}
+          className="absolute w-1 h-1 rounded-full bg-mode-glow"
+          initial={{
+            x: Math.random() * window.innerWidth,
+            y: Math.random() * window.innerHeight,
+            opacity: 0.2,
+          }}
+          animate={{
+            y: ["0%", "100%"],
+            opacity: [0.2, 0.7, 0.2],
+          }}
+          transition={{
+            duration: 8 + Math.random() * 10,
+            repeat: Infinity,
+            delay: i * 0.3,
+          }}
+        />
+      ))}
+    </div>
+  );
+}
+
+// 🔵 MOOD CORE (CENTER EMOTIONAL ENERGY SPHERE)
+function MoodCore({ energy, stress }) {
+  return (
+    <div className="relative flex items-center justify-center mt-6 mb-10">
+      <motion.div
+        className="w-40 h-40 rounded-full blur-3xl absolute"
+        animate={{
+          background: [
+            `rgba(0,180,255,${0.4 + energy})`,
+            `rgba(255,80,120,${0.4 + stress})`,
+            `rgba(0,180,255,${0.4 + energy})`,
+          ],
+        }}
+        transition={{ duration: 5, repeat: Infinity }}
+      />
+
+      <motion.div
+        className="w-32 h-32 rounded-full bg-black/20 backdrop-blur-xl border border-white/10 shadow-xl flex items-center justify-center"
+        animate={{
+          scale: [1, 1.1, 1],
+          boxShadow: [
+            "0 0 30px rgba(0,200,255,0.2)",
+            "0 0 40px rgba(255,80,120,0.3)",
+            "0 0 30px rgba(0,200,255,0.2)",
+          ],
+        }}
+        transition={{ duration: 6, repeat: Infinity }}
+      >
+        <motion.div
+          className="w-20 h-20 rounded-full bg-mode-primary/40 backdrop-blur-xl"
+          animate={{
+            scale: [1, 1.2, 1],
+            backgroundColor: [
+              "rgba(0,150,255,0.4)",
+              "rgba(255,60,90,0.4)",
+              "rgba(0,150,255,0.4)",
+            ],
+          }}
+          transition={{ duration: 4, repeat: Infinity }}
+        />
+      </motion.div>
+    </div>
+  );
+}
+
+// 📊 MINI ENERGY GRAPH
+function EnergyTimeline({ history }) {
+  const last20 = history.slice(-20);
+  if (!last20.length) return null;
+
+  return (
+    <div className="flex items-end h-16 gap-1 mt-4">
       {last20.map((s, i) => (
         <motion.div
           key={i}
@@ -18,7 +92,7 @@ function MiniTimeline() {
           style={{ height: `${s.energyLevel * 100}%` }}
           initial={{ scaleY: 0 }}
           animate={{ scaleY: 1 }}
-          transition={{ delay: i * 0.02 }}
+          transition={{ delay: i * 0.03 }}
         />
       ))}
     </div>
@@ -26,182 +100,96 @@ function MiniTimeline() {
 }
 
 export default function HomePage() {
-  const { emotion, activeMood, sensingActive, toggleSensing } = useEmotionStore();
-  const moodTheme = MOOD_THEMES.find((m) => m.mood === activeMood) || MOOD_THEMES[0];
+  const { emotion, activeMood, sensingActive, toggleSensing, recentHistory } =
+    useEmotionStore();
 
   return (
-    <div className="p-4 sm:p-6 lg:p-8 max-w-5xl mx-auto space-y-6">
-      {/* Hero */}
+    <div className="relative p-6 max-w-6xl mx-auto">
+      <ParticleField />
+
+      {/* HEADER */}
       <motion.div
-        className="relative overflow-hidden rounded-2xl p-6 sm:p-10"
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.6 }}
+        className="text-center"
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
       >
-        {/* Animated gradient backdrop */}
-        <div className="absolute inset-0 -z-10">
-          <motion.div
-            className="absolute inset-0 bg-gradient-to-br from-mode-primary/20 via-mode-glow/10 to-transparent"
-            animate={{ opacity: [0.5, 0.8, 0.5] }}
-            transition={{ duration: 4, repeat: Infinity }}
-          />
-          <motion.div
-            className="absolute -top-1/2 -right-1/4 w-[600px] h-[600px] rounded-full bg-mode-glow/10 blur-3xl"
-            animate={{ scale: [1, 1.2, 1], rotate: [0, 90, 0] }}
-            transition={{ duration: 20, repeat: Infinity }}
-          />
-        </div>
+        <p className="text-sm text-mode-primary tracking-widest uppercase mb-2">
+          MoodiOS • Emotional Intelligence Engine
+        </p>
 
-        <div className="relative z-10">
-          <motion.p
-            className="text-sm font-medium text-mode-primary tracking-widest uppercase mb-2"
-            animate={{ opacity: [0.6, 1, 0.6] }}
-            transition={{ duration: 3, repeat: Infinity }}
-          >
-            Now Playing: Your Mood
-          </motion.p>
-          <h2 className="font-display text-4xl sm:text-5xl font-bold text-foreground mb-2">
-            {moodTheme.icon} {moodTheme.label}
-          </h2>
-          <p className="text-muted-foreground max-w-md">{moodTheme.description}</p>
-
-          {sensingActive && (
-            <motion.div
-              className="mt-4 flex items-center gap-6 text-sm"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-            >
-              <div className="flex items-center gap-2">
-                <Activity size={14} className="text-mode-primary" />
-                <span className="text-muted-foreground">Stress</span>
-                <div className="w-20 h-1.5 rounded-full bg-secondary overflow-hidden">
-                  <motion.div
-                    className="h-full rounded-full bg-mode-primary"
-                    animate={{ width: `${emotion.stressLevel * 100}%` }}
-                    transition={{ duration: 0.5 }}
-                  />
-                </div>
-                <span className="text-foreground font-medium">{Math.round(emotion.stressLevel * 100)}%</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Zap size={14} className="text-mode-glow" />
-                <span className="text-muted-foreground">Energy</span>
-                <div className="w-20 h-1.5 rounded-full bg-secondary overflow-hidden">
-                  <motion.div
-                    className="h-full rounded-full bg-mode-glow"
-                    animate={{ width: `${emotion.energyLevel * 100}%` }}
-                    transition={{ duration: 0.5 }}
-                  />
-                </div>
-                <span className="text-foreground font-medium">{Math.round(emotion.energyLevel * 100)}%</span>
-              </div>
-            </motion.div>
-          )}
-        </div>
+        <h1 className="font-display text-5xl text-foreground font-bold">
+          {activeMood.charAt(0).toUpperCase() + activeMood.slice(1)}
+        </h1>
       </motion.div>
 
-      {/* Quick Actions */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-        {!sensingActive ? (
-          <motion.button
-            onClick={toggleSensing}
-            className="glass rounded-xl p-5 flex items-center gap-4 hover:scale-[1.02] transition-transform"
-            whileTap={{ scale: 0.98 }}
-          >
-            <div className="w-10 h-10 rounded-lg bg-mode-primary/15 flex items-center justify-center">
-              <PlayCircle size={20} className="text-mode-primary" />
-            </div>
-            <div className="text-left">
-              <p className="font-display font-semibold text-foreground">Enable Sensing</p>
-              <p className="text-xs text-muted-foreground">Start emotion detection</p>
-            </div>
-          </motion.button>
-        ) : (
-          <motion.div
-            className="glass rounded-xl p-5 flex items-center gap-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-          >
-            <div className="w-10 h-10 rounded-lg bg-mode-primary/15 flex items-center justify-center">
-              <Brain size={20} className="text-mode-primary animate-pulse" />
-            </div>
-            <div className="text-left">
-              <p className="font-display font-semibold text-foreground">Sensing Active</p>
-              <p className="text-xs text-muted-foreground">Confidence: {Math.round(emotion.confidence * 100)}%</p>
-            </div>
-          </motion.div>
-        )}
+      {/* MOOD CORE */}
+      <MoodCore energy={emotion.energyLevel} stress={emotion.stressLevel} />
 
-        <Link to="/focus">
-          <motion.div
-            className="glass rounded-xl p-5 flex items-center gap-4 hover:scale-[1.02] transition-transform h-full"
-            whileTap={{ scale: 0.98 }}
-          >
-            <div className="w-10 h-10 rounded-lg bg-mode-accent/15 flex items-center justify-center">
-              <Target size={20} className="text-mode-accent" />
-            </div>
-            <div className="text-left">
-              <p className="font-display font-semibold text-foreground">Focus Tunnel</p>
-              <p className="text-xs text-muted-foreground">Enter deep work mode</p>
-            </div>
-          </motion.div>
-        </Link>
+      {/* SENSING CARD */}
+      <motion.div
+        className="glass p-5 rounded-2xl flex items-center justify-between mb-6"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+      >
+        <div>
+          <p className="text-xl font-display font-bold text-foreground">
+            Emotion Sensing
+          </p>
+          <p className="text-muted-foreground text-sm">
+            {sensingActive ? "Running in real time…" : "Tap to activate analysis"}
+          </p>
+        </div>
 
-        <Link to="/creative">
-          <motion.div
-            className="glass rounded-xl p-5 flex items-center gap-4 hover:scale-[1.02] transition-transform h-full"
-            whileTap={{ scale: 0.98 }}
-          >
-            <div className="w-10 h-10 rounded-lg bg-mode-glow/15 flex items-center justify-center">
-              <Sparkles size={20} className="text-mode-glow" />
-            </div>
-            <div className="text-left">
-              <p className="font-display font-semibold text-foreground">Creative Space</p>
-              <p className="text-xs text-muted-foreground">Capture your sparks</p>
-            </div>
-          </motion.div>
-        </Link>
-      </div>
-
-      {/* Mini Timeline */}
-      {sensingActive && (
-        <motion.div
-          className="glass rounded-xl p-5"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+        <motion.button
+          onClick={toggleSensing}
+          className={`px-5 py-2 rounded-xl text-sm font-semibold ${
+            sensingActive
+              ? "bg-mode-accent/20 text-mode-accent"
+              : "bg-mode-primary/20 text-mode-primary"
+          }`}
+          whileTap={{ scale: 0.95 }}
         >
-          <div className="flex items-center justify-between mb-3">
-            <div className="flex items-center gap-2">
-              <BarChart3 size={16} className="text-mode-primary" />
-              <p className="font-display font-semibold text-sm text-foreground">Recent Activity</p>
-            </div>
-            <Link to="/timeline" className="text-xs text-mode-primary hover:underline">View Full Timeline →</Link>
-          </div>
-          <MiniTimeline />
-        </motion.div>
-      )}
+          {sensingActive ? "Stop" : "Start"}
+        </motion.button>
+      </motion.div>
 
-      {/* Daily Summary */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+      {/* METRIC CARDS */}
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10">
         {[
-          { label: 'Avg Energy', value: `${Math.round(emotion.energyLevel * 100)}%`, icon: Zap },
-          { label: 'Stress Level', value: `${Math.round(emotion.stressLevel * 100)}%`, icon: Activity },
-          { label: 'Mood', value: activeMood, icon: Brain },
-          { label: 'Confidence', value: `${Math.round(emotion.confidence * 100)}%`, icon: Target },
+          { label: "Energy", value: emotion.energyLevel, icon: Zap },
+          { label: "Stress", value: emotion.stressLevel, icon: Activity },
+          { label: "Focus", value: emotion.focusLevel, icon: Target },
+          { label: "Confidence", value: emotion.confidence, icon: Brain },
         ].map(({ label, value, icon: Icon }, i) => (
           <motion.div
             key={label}
-            className="glass rounded-xl p-4 text-center"
-            initial={{ opacity: 0, y: 20 }}
+            className="glass p-5 rounded-2xl text-center"
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.1 }}
           >
-            <Icon size={16} className="mx-auto mb-2 text-mode-primary" />
+            <Icon className="mx-auto mb-2 text-mode-primary" />
             <p className="text-xs text-muted-foreground">{label}</p>
-            <p className="font-display font-bold text-lg text-foreground capitalize">{value}</p>
+            <p className="font-display text-2xl font-bold text-foreground">
+              {Math.round(value * 100)}%
+            </p>
           </motion.div>
         ))}
       </div>
+
+      {/* RECENT ACTIVITY GRAPH */}
+      {sensingActive && (
+        <motion.div
+          className="glass p-5 rounded-2xl"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+        >
+          <p className="flex items-center gap-2 text-mode-primary mb-3">
+            <Sparkles size={16} /> Recent Emotional Activity
+          </p>
+          <EnergyTimeline history={recentHistory} />
+        </motion.div>
+      )}
     </div>
   );
 }
