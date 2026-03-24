@@ -1,9 +1,9 @@
 import { useEffect, useRef, useCallback } from 'react';
 import { useEmotionStore } from '@/stores/emotionStore';
+import { adaptivePolicy, perfBudgeter } from '@/lib/adaptive';
 import type { Mood } from '@/types/emotion';
 
-// Simulated emotion engine - produces realistic-looking emotion data
-// In production, this would be replaced with MediaPipe + Web Audio + ONNX fusion
+// Simulated emotion engine — produces organic emotion data
 function simulateEmotion(time: number): { mood: Mood; stress: number; energy: number; confidence: number } {
   const hour = new Date().getHours();
   const timeBase = time / 1000;
@@ -13,7 +13,7 @@ function simulateEmotion(time: number): { mood: Mood; stress: number; energy: nu
   const baseEnergy = 0.5 + circadian * 0.25;
   const baseStress = 0.3 + Math.sin(timeBase * 0.05) * 0.15;
 
-  // Add organic noise
+  // Organic noise
   const noise1 = Math.sin(timeBase * 0.3) * 0.1 + Math.sin(timeBase * 0.7) * 0.05;
   const noise2 = Math.cos(timeBase * 0.2) * 0.08 + Math.cos(timeBase * 0.5) * 0.06;
 
@@ -32,13 +32,21 @@ function simulateEmotion(time: number): { mood: Mood; stress: number; energy: nu
 }
 
 export function useEmotionSensing() {
-  const { sensingActive, setEmotion, addToHistory, moodOverride } = useEmotionStore();
+  const { sensingActive, setEmotion, addToHistory, moodOverride, setShieldActive } = useEmotionStore();
   const intervalRef = useRef<number | null>(null);
   const startTimeRef = useRef(Date.now());
 
   const tick = useCallback(() => {
     const elapsed = Date.now() - startTimeRef.current;
     const sim = simulateEmotion(elapsed);
+
+    // Feed adaptive policy
+    adaptivePolicy.update(sim.stress, sim.energy, sim.confidence);
+
+    // Use adaptive policy for shield (quantile-based, not hardcoded)
+    if (adaptivePolicy.shouldShield) {
+      setShieldActive(true);
+    }
 
     const emotionState = {
       mood: moodOverride || sim.mood,
@@ -50,13 +58,15 @@ export function useEmotionSensing() {
 
     setEmotion(emotionState);
     addToHistory(emotionState);
-  }, [setEmotion, addToHistory, moodOverride]);
+  }, [setEmotion, addToHistory, moodOverride, setShieldActive]);
 
   useEffect(() => {
     if (sensingActive) {
       startTimeRef.current = Date.now();
-      tick(); // immediate
-      intervalRef.current = window.setInterval(tick, 3000);
+      tick();
+      // Use adaptive cadence from performance budgeter
+      const cadence = perfBudgeter.sensingCadence;
+      intervalRef.current = window.setInterval(tick, cadence);
     } else {
       if (intervalRef.current) {
         clearInterval(intervalRef.current);

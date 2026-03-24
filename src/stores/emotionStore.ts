@@ -1,31 +1,101 @@
-import { create } from "zustand";
-import { fuseEmotion } from "@/core/emotion";
+import { create } from 'zustand';
+import type { Mood, EmotionState, SensorPermissions } from '@/types/emotion';
 
-export const useEmotionStore = create((set, get) => ({
+interface EmotionStore {
+  emotion: EmotionState;
+  setEmotion: (state: Partial<EmotionState>) => void;
+  activeMood: Mood;
+  moodOverride: Mood | null;
+  setMoodOverride: (mood: Mood | null) => void;
+  sensingActive: boolean;
+  sensingMode: 'real' | 'simulation' | 'off';
+  setSensingMode: (mode: 'real' | 'simulation' | 'off') => void;
+  toggleSensing: () => void;
+  killSwitch: () => void;
+  permissions: SensorPermissions;
+  setPermission: (key: keyof SensorPermissions, value: string | boolean) => void;
+  isDark: boolean;
+  toggleDark: () => void;
+  setDark: (dark: boolean) => void;
+  recentHistory: EmotionState[];
+  addToHistory: (state: EmotionState) => void;
+  shieldActive: boolean;
+  setShieldActive: (active: boolean) => void;
+  queuedNotifications: { id: string; title: string; body: string; timestamp: number }[];
+  addNotification: (n: { title: string; body: string }) => void;
+  clearNotifications: () => void;
+  splashSeen: boolean;
+  setSplashSeen: (seen: boolean) => void;
+}
+
+function deriveMood(e: EmotionState): Mood {
+  if (e.stressLevel > 0.7) return 'calm';
+  if (e.energyLevel < 0.3) return 'tired';
+  if (e.energyLevel > 0.7 && e.confidence > 0.5) return 'motivated';
+  if (e.stressLevel < 0.3 && e.energyLevel > 0.5) return 'creative';
+  if (e.confidence > 0.6) return 'focus';
+  return 'neutral';
+}
+
+export const useEmotionStore = create<EmotionStore>()((set, get) => ({
   emotion: {
-    stressLevel: 0,
-    energyLevel: 0,
-    calmness: 0,
-    focusLevel: 0,
+    mood: 'neutral',
     confidence: 0,
-    activeMood: "calm",
+    stressLevel: 0.3,
+    energyLevel: 0.5,
+    lastUpdated: Date.now(),
   },
-
-  recentHistory: [],
-
+  setEmotion: (partial) => {
+    const current = get().emotion;
+    const updated = { ...current, ...partial, lastUpdated: Date.now() };
+    set({ emotion: updated });
+    if (!get().moodOverride) {
+      set({ activeMood: deriveMood(updated) });
+    }
+    if (updated.stressLevel > 0.7) {
+      set({ shieldActive: true });
+    }
+  },
+  activeMood: 'neutral' as Mood,
+  moodOverride: null,
+  setMoodOverride: (mood) => set({ moodOverride: mood, activeMood: mood || deriveMood(get().emotion) }),
   sensingActive: false,
-
-  async update(input) {
-    const output = await fuseEmotion(input, true);
-
-    set((state) => ({
-      emotion: output,
-      recentHistory: [...state.recentHistory, output].slice(-50),
-    }));
+  sensingMode: 'off',
+  setSensingMode: (mode) => set({ sensingMode: mode, sensingActive: mode !== 'off' }),
+  toggleSensing: () => {
+    const s = get();
+    if (s.sensingActive) {
+      set({ sensingActive: false, sensingMode: 'off' });
+    } else {
+      set({ sensingActive: true, sensingMode: 'simulation' });
+    }
   },
-
-  toggleSensing() {
-    set({ sensingActive: !get().sensingActive });
+  killSwitch: () => set({ sensingActive: false, sensingMode: 'off' }),
+  permissions: {
+    camera: 'not-requested',
+    microphone: 'not-requested',
+    notifications: 'not-requested',
+    wakeLock: false,
+  },
+  setPermission: (key, value) => set((s) => ({ permissions: { ...s.permissions, [key]: value } })),
+  isDark: typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches,
+  toggleDark: () => set((s) => ({ isDark: !s.isDark })),
+  setDark: (dark) => set({ isDark: dark }),
+  recentHistory: [],
+  addToHistory: (state) => set((s) => {
+    const history = [...s.recentHistory, state];
+    return { recentHistory: history.slice(-600) };
+  }),
+  shieldActive: false,
+  setShieldActive: (active) => set({ shieldActive: active }),
+  queuedNotifications: [],
+  addNotification: (n) => set((s) => ({
+    queuedNotifications: [...s.queuedNotifications, { ...n, id: crypto.randomUUID(), timestamp: Date.now() }],
+  })),
+  clearNotifications: () => set({ queuedNotifications: [] }),
+  splashSeen: typeof window !== 'undefined' && localStorage.getItem('moodios-splash-seen') === 'true',
+  setSplashSeen: (seen) => {
+    if (typeof window !== 'undefined') localStorage.setItem('moodios-splash-seen', String(seen));
+    set({ splashSeen: seen });
   },
 }));
-``

@@ -4,6 +4,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import AppLayout from "@/components/AppLayout";
+import SplashScreen from "@/components/SplashScreen";
 import { useEmotionSensing } from "@/hooks/useEmotionSensing";
 import HomePage from "./pages/HomePage";
 import ModesPage from "./pages/ModesPage";
@@ -20,19 +21,22 @@ const queryClient = new QueryClient();
 function AppInner() {
   useEmotionSensing();
   return (
-    <AppLayout>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/modes" element={<ModesPage />} />
-        <Route path="/shield" element={<ShieldPage />} />
-        <Route path="/focus" element={<FocusPage />} />
-        <Route path="/creative" element={<CreativePage />} />
-        <Route path="/timeline" element={<TimelinePage />} />
-        <Route path="/settings" element={<SettingsPage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </AppLayout>
+    <>
+      <SplashScreen />
+      <AppLayout>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/modes" element={<ModesPage />} />
+          <Route path="/shield" element={<ShieldPage />} />
+          <Route path="/focus" element={<FocusPage />} />
+          <Route path="/creative" element={<CreativePage />} />
+          <Route path="/timeline" element={<TimelinePage />} />
+          <Route path="/settings" element={<SettingsPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </AppLayout>
+    </>
   );
 }
 
