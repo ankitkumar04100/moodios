@@ -1,27 +1,36 @@
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useEmotionStore } from '@/stores/emotionStore';
 import { NavLink, useLocation } from 'react-router-dom';
-import { Home, Layers, Shield, Target, Sparkles, BarChart3, Settings, Info, PauseCircle, PlayCircle, Sun, Moon } from 'lucide-react';
+import { Home, Layers, Shield, Target, Sparkles, BarChart3, Settings, Info, PauseCircle, PlayCircle, Sun, Moon, SlidersHorizontal } from 'lucide-react';
+import PermissionsSheet from '@/components/PermissionsSheet';
+import ParticleBackground from '@/components/ParticleBackground';
 
 const navItems = [
   { to: '/', icon: Home, label: 'Home' },
   { to: '/modes', icon: Layers, label: 'Modes' },
-  { to: '/shield', icon: Shield, label: 'Shield' },
-  { to: '/focus', icon: Target, label: 'Focus' },
-  { to: '/creative', icon: Sparkles, label: 'Creative' },
   { to: '/timeline', icon: BarChart3, label: 'Timeline' },
   { to: '/settings', icon: Settings, label: 'Settings' },
   { to: '/about', icon: Info, label: 'About' },
 ];
 
+const sidebarExtraItems = [
+  { to: '/shield', icon: Shield, label: 'Shield' },
+  { to: '/focus', icon: Target, label: 'Focus' },
+  { to: '/creative', icon: Sparkles, label: 'Creative' },
+];
+
 export default function AppLayout({ children }: { children: React.ReactNode }) {
-  const { activeMood, sensingActive, killSwitch, toggleSensing, isDark, toggleDark, emotion } = useEmotionStore();
+  const { activeMood, sensingActive, sensingMode, killSwitch, toggleSensing, isDark, toggleDark, emotion } = useEmotionStore();
   const location = useLocation();
+  const [permissionsOpen, setPermissionsOpen] = useState(false);
 
   const moodClass = activeMood === 'neutral' ? '' : `mood-${activeMood}`;
 
   return (
     <div className={`min-h-screen flex flex-col ${moodClass} ${isDark ? 'dark' : ''} film-grain`}>
+      <ParticleBackground />
+
       {/* Top Bar */}
       <header className="sticky top-0 z-50 glass">
         <div className="flex items-center justify-between px-4 py-2 max-w-7xl mx-auto">
@@ -43,8 +52,20 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
               >
                 <span className="w-2 h-2 rounded-full bg-mode-primary animate-pulse" />
                 {activeMood.charAt(0).toUpperCase() + activeMood.slice(1)} · {Math.round(emotion.confidence * 100)}%
+                {sensingMode === 'simulation' && (
+                  <span className="text-amber-500 ml-1">SIM</span>
+                )}
               </motion.div>
             )}
+
+            {/* Permissions button */}
+            <button
+              onClick={() => setPermissionsOpen(true)}
+              className="p-2 rounded-lg hover:bg-secondary transition-colors text-muted-foreground"
+              aria-label="Sensor permissions"
+            >
+              <SlidersHorizontal size={18} />
+            </button>
 
             <button
               onClick={toggleDark}
@@ -74,7 +95,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
       <div className="flex flex-1 overflow-hidden">
         {/* Sidebar nav (desktop) */}
         <nav className="hidden md:flex flex-col gap-1 p-3 w-16 lg:w-48 shrink-0">
-          {navItems.map(({ to, icon: Icon, label }) => (
+          {[...navItems, ...sidebarExtraItems].map(({ to, icon: Icon, label }) => (
             <NavLink
               key={to}
               to={to}
@@ -109,9 +130,9 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
         </main>
       </div>
 
-      {/* Bottom nav (mobile) */}
+      {/* Bottom nav (mobile/tablet) — ALL 5 tabs always visible */}
       <nav className="md:hidden sticky bottom-0 z-50 glass flex justify-around py-1.5 px-2">
-        {navItems.slice(0, 6).map(({ to, icon: Icon, label }) => (
+        {navItems.map(({ to, icon: Icon, label }) => (
           <NavLink
             key={to}
             to={to}
@@ -126,6 +147,8 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
           </NavLink>
         ))}
       </nav>
+
+      <PermissionsSheet open={permissionsOpen} onOpenChange={setPermissionsOpen} />
     </div>
   );
 }

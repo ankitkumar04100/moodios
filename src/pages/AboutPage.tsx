@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Heart, Shield, Brain, Eye, Zap } from 'lucide-react';
+import { useEmotionStore } from '@/stores/emotionStore';
 
 const sections = [
   {
@@ -30,6 +31,13 @@ const sections = [
 ];
 
 export default function AboutPage() {
+  const { setSplashSeen } = useEmotionStore();
+
+  const replaySplash = () => {
+    setSplashSeen(false);
+    window.location.reload();
+  };
+
   return (
     <div className="p-4 sm:p-6 lg:p-8 max-w-4xl mx-auto space-y-12">
       {/* Hero */}
@@ -45,14 +53,14 @@ export default function AboutPage() {
             transition={{ duration: 5, repeat: Infinity }}
           />
           <motion.div
-            className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[400px] h-[400px] rounded-full bg-mode-glow/8 blur-3xl"
+            className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[400px] h-[400px] rounded-full bg-mode-glow/5 blur-3xl"
             animate={{ scale: [1, 1.3, 1] }}
             transition={{ duration: 8, repeat: Infinity }}
           />
         </div>
 
         <motion.div
-          className="w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br from-mode-primary to-mode-glow flex items-center justify-center mb-6"
+          className="w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br from-mode-primary to-mode-glow flex items-center justify-center mb-6 shadow-2xl"
           animate={{ rotate: [0, 5, -5, 0] }}
           transition={{ duration: 6, repeat: Infinity }}
         >
@@ -64,6 +72,13 @@ export default function AboutPage() {
           The world's first emotion-adaptive operating system layer. Your device learns how you feel — and responds.
         </p>
         <p className="text-sm text-muted-foreground/60 mt-2">v1.0 · Built with privacy at the core</p>
+
+        <button
+          onClick={replaySplash}
+          className="mt-6 px-4 py-2 rounded-lg text-sm text-mode-primary bg-mode-primary/10 hover:bg-mode-primary/20 transition-colors font-medium"
+        >
+          Replay Splash Screen
+        </button>
       </motion.div>
 
       {/* Vision sections */}
