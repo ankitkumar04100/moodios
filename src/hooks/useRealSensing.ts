@@ -10,43 +10,26 @@ import { ProsodyAnalyzer, type ProsodyFeatures } from '@/core/audio/prosodyAnaly
 import { FaceLandmarkerEngine, type FaceFeatures } from '@/core/vision/faceLandmarker';
 import { adaptivePolicy, perfBudgeter } from '@/lib/adaptive';
 import { pushSample } from '@/lib/duckdb';
+import { neuralFuse } from '@/core/emotion/fusionONNX';
 import type { Mood } from '@/types/emotion';
 
 function fuseToEmotion(
   face: FaceFeatures | null,
   audio: ProsodyFeatures | null
 ): { mood: Mood; stress: number; energy: number; confidence: number } {
-  // Default from face
-  const browStress = face ? face.browTension : 0;
-  const lipStress = face ? face.lipCompression : 0;
-  const eyeOpen = face ? face.eyeOpenness : 0.5;
-  const smile = face ? face.mouthSmile : 0;
-  const attention = face ? face.attention : 0.5;
-
-  // Audio features
-  const rms = audio ? audio.rmsEnergy : 0;
-  const centroid = audio ? audio.spectralCentroid : 0;
-  const rhythm = audio ? audio.rhythmicity : 0;
-
-  // Fusion weights
-  const stress = browStress * 0.3 + lipStress * 0.2 + (1 - smile) * 0.15 + (1 - rhythm) * 0.1 + centroid * 0.1 + (1 - eyeOpen) * 0.15;
-  const energy = rms * 0.35 + eyeOpen * 0.25 + centroid * 0.15 + rhythm * 0.15 + (face?.jawOpen ?? 0) * 0.1;
-  const confidence = attention * 0.4 + (face ? 0.4 : 0) + (audio ? 0.2 : 0); // higher if both sensors active
-
-  // Mood derivation
-  let mood: Mood = 'neutral';
-  if (stress > 0.6) mood = 'calm'; // high stress → prescribe calm
-  else if (energy < 0.3) mood = 'tired';
-  else if (energy > 0.65 && confidence > 0.5) mood = 'motivated';
-  else if (stress < 0.3 && energy > 0.45) mood = 'creative';
-  else if (attention > 0.6) mood = 'focus';
-
-  return {
-    mood,
-    stress: Math.max(0, Math.min(1, stress)),
-    energy: Math.max(0, Math.min(1, energy)),
-    confidence: Math.max(0, Math.min(1, confidence)),
-  };
+  return neuralFuse({
+    browTension: face?.browTension ?? 0,
+    lipCompression: face?.lipCompression ?? 0,
+    eyeOpenness: face?.eyeOpenness ?? 0.5,
+    mouthSmile: face?.mouthSmile ?? 0,
+    attention: face?.attention ?? 0.5,
+    jawOpen: face?.jawOpen ?? 0,
+    rmsEnergy: audio?.rmsEnergy ?? 0,
+    spectralCentroid: audio?.spectralCentroid ?? 0,
+    rhythmicity: audio?.rhythmicity ?? 0,
+    hourOfDay: new Date().getHours(),
+    recentFocusStreak: 0,
+  });
 }
 
 export function useRealSensing() {

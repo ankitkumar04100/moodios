@@ -149,8 +149,20 @@ export async function queryTimeline(limit = 1440): Promise<MinuteAggregate[]> {
 
     const rows: MinuteAggregate[] = [];
     for (let i = 0; i < result.numRows; i++) {
+      // DuckDB returns timestamps as BigInt microseconds — convert to ISO string
+      const rawTs = result.getChildAt(0)?.get(i);
+      let tsStr: string;
+      if (typeof rawTs === 'bigint') {
+        tsStr = new Date(Number(rawTs) / 1000).toISOString();
+      } else if (typeof rawTs === 'number') {
+        tsStr = new Date(rawTs > 1e12 ? rawTs / 1000 : rawTs).toISOString();
+      } else {
+        tsStr = new Date(String(rawTs)).toISOString();
+      }
+      if (tsStr === 'Invalid Date') tsStr = new Date().toISOString();
+
       rows.push({
-        ts_minute: String(result.getChildAt(0)?.get(i)),
+        ts_minute: tsStr,
         mood: String(result.getChildAt(1)?.get(i)),
         stress_avg: Number(result.getChildAt(2)?.get(i)),
         energy_avg: Number(result.getChildAt(3)?.get(i)),
