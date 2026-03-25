@@ -1,6 +1,6 @@
 # MoodiOS
 
-<img width="2528" height="1696" alt="Gemini_Generated_Image_68y9oo68y9oo68y9" src="https://github.com/user-attachments/assets/1027b2ec-90ec-4711-a551-217e2da54009" />
+ <img width="2528" height="1696" alt="Gemini_Generated_Image_lgdr5clgdr5clgdr" src="https://github.com/user-attachments/assets/92c24de9-529d-486f-bf85-110ce60d2065" />
 
 ## The World’s First Emotion-Adaptive Operating System
 ## A New Human-Computer Interaction Standard for the Next Century
