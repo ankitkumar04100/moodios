@@ -27,6 +27,8 @@ function AppInner() {
   return (
     <>
       <SplashScreen />
+      <InstallBanner />
+      <DebugOverlay />
       <AppLayout>
         <Routes>
           <Route path="/" element={<HomePage />} />
