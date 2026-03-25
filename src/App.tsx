@@ -5,6 +5,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import AppLayout from "@/components/AppLayout";
 import SplashScreen from "@/components/SplashScreen";
+import DebugOverlay from "@/components/DebugOverlay";
+import InstallBanner from "@/components/InstallBanner";
 import { useEmotionSensing } from "@/hooks/useEmotionSensing";
 import { useRealSensing } from "@/hooks/useRealSensing";
 import HomePage from "./pages/HomePage";
