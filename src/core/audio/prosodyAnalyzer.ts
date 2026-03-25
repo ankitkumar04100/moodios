@@ -38,8 +38,8 @@ export class ProsodyAnalyzer {
       return { rmsEnergy: 0, spectralCentroid: 0, rhythmicity: 0 };
     }
 
-    this.analyser.getFloatTimeDomainData(this.timeDomain);
-    this.analyser.getFloatFrequencyData(this.freqDomain);
+    this.analyser.getFloatTimeDomainData(this.timeDomain as any);
+    this.analyser.getFloatFrequencyData(this.freqDomain as any);
 
     const rms = this.computeRMS();
     const centroid = this.computeSpectralCentroid();
