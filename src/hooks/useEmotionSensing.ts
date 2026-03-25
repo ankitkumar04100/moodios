@@ -1,6 +1,7 @@
 import { useEffect, useRef, useCallback } from 'react';
 import { useEmotionStore } from '@/stores/emotionStore';
 import { adaptivePolicy, perfBudgeter } from '@/lib/adaptive';
+import { pushSample, flushBatch } from '@/lib/duckdb';
 import type { Mood } from '@/types/emotion';
 
 // Simulated emotion engine — produces organic emotion data
@@ -32,18 +33,19 @@ function simulateEmotion(time: number): { mood: Mood; stress: number; energy: nu
 }
 
 export function useEmotionSensing() {
-  const { sensingActive, setEmotion, addToHistory, moodOverride, setShieldActive } = useEmotionStore();
+  const { sensingActive, sensingMode, setEmotion, addToHistory, moodOverride, setShieldActive } = useEmotionStore();
   const intervalRef = useRef<number | null>(null);
   const startTimeRef = useRef(Date.now());
 
   const tick = useCallback(() => {
+    // Only run simulation tick when in simulation mode
+    if (sensingMode === 'real') return;
+
     const elapsed = Date.now() - startTimeRef.current;
     const sim = simulateEmotion(elapsed);
 
-    // Feed adaptive policy
     adaptivePolicy.update(sim.stress, sim.energy, sim.confidence);
 
-    // Use adaptive policy for shield (quantile-based, not hardcoded)
     if (adaptivePolicy.shouldShield) {
       setShieldActive(true);
     }
@@ -58,13 +60,21 @@ export function useEmotionSensing() {
 
     setEmotion(emotionState);
     addToHistory(emotionState);
-  }, [setEmotion, addToHistory, moodOverride, setShieldActive]);
+
+    // Push to DuckDB for persistent analytics
+    pushSample(
+      emotionState.mood,
+      emotionState.stressLevel,
+      emotionState.energyLevel,
+      emotionState.confidence,
+      'simulation'
+    );
+  }, [sensingMode, setEmotion, addToHistory, moodOverride, setShieldActive]);
 
   useEffect(() => {
-    if (sensingActive) {
+    if (sensingActive && sensingMode !== 'real') {
       startTimeRef.current = Date.now();
       tick();
-      // Use adaptive cadence from performance budgeter
       const cadence = perfBudgeter.sensingCadence;
       intervalRef.current = window.setInterval(tick, cadence);
     } else {
@@ -75,6 +85,8 @@ export function useEmotionSensing() {
     }
     return () => {
       if (intervalRef.current) clearInterval(intervalRef.current);
+      // Flush any pending DuckDB samples
+      flushBatch();
     };
-  }, [sensingActive, tick]);
+  }, [sensingActive, sensingMode, tick]);
 }
