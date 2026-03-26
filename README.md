@@ -277,226 +277,382 @@ technology that finally feels human.**
 
 ---
 
-## 8. 🌟 Key Features — The Complete, Emotion‑Intelligent Experience (Long, Detailed & Heart‑Touching)
-
-MoodiOS isn’t just a collection of features — it is the first operating system layer that feels alive, attentive, and emotionally connected to the person behind the screen. Every part of it is built to sense your inner world and shape the digital environment around your heart, not just your hands.
-
-### 1. **Real‑Time Emotion Detection — Technology That Truly Sees You**  
-MoodiOS reads the emotional signals you never speak out loud.  
-It understands your micro‑expressions, voice tone, typing rhythm, gestures, and app behavior.  
-Like a friend who can understand your feelings with just one glance, MoodiOS always knows when you’re stressed, tired, inspired, or overwhelmed — and adapts instantly.
-
-### 2. **Adaptive UI Engine — A Screen That Breathes With You**  
-Your digital environment transforms based on your emotional energy.  
-Warm tones when you need calm.  
-Vibrant palettes when creativity sparks.  
-Darker, quieter visuals when you feel tired.  
-Your device becomes an extension of your emotional state — gentle, intuitive, and alive.
-
-### 3. **Mood‑Based Notifications — Protection For Your Peace**  
-When stress rises, MoodiOS becomes your guardian.  
-It slows the flow of notifications, hides non‑urgent alerts, and protects you from chaos.  
-Your focus becomes sacred — your attention, respected.
-
-### 4. **Emotion‑Driven Productivity Modes — Your Mind’s Perfect Environment**  
-MoodiOS automatically shifts between modes like:  
-- **Focus Mode** for deep work  
-- **Calm Mode** during stress  
-- **Creative Mode** when ideas flow  
-- **Rest Mode** when fatigue hits  
-- **Motivation Mode** when you’re unstoppable  
-
-It’s like having a workspace that intuitively knows what your mind needs most.
-
-### 5. **Emotion Timeline — A Mirror Into Your Day**  
-See how your emotions rise, fall, and evolve.  
-Not to track you — but to **understand you**.  
-This awareness helps you grow, heal, and balance your life.
-
-### 6. **Behavior Intelligence Engine — Understanding the Unspoken**  
-MoodiOS detects deeper patterns:  
-- burnout signs  
-- frustration spikes  
-- fatigue cycles  
-- your natural productivity rhythm  
-
-It responds with compassion — simplifying your UI, suggesting breaks, or offering calm.
-
-### 7. **Environment‑Aware Emotion Sensing — Because Emotions Live in Context**  
-MoodiOS reads ambient light, noise, posture, and environment to understand how you *truly* feel.  
-It notices when your world is heavy — and lightens your digital space.
-
-### 8. **Emotion‑Adaptive Music & Soundscapes**  
-When stress rises, MoodiOS creates calm.  
-When focus deepens, it shapes silence.  
-When creativity blooms, it adds inspiration.
-
-### 9. **Emotional Safety Mode — Gentle Support in Vulnerable Moments**  
-During emotional distress, MoodiOS softens your world — dimming the screen, quieting noise, simplifying complexity, and offering breathing moments.
-
-### 10. **Developer APIs — A New Emotion‑Aware Ecosystem**  
-Apps can finally react to human emotions.  
-A whole software world that feels what you feel.
+## 8. 🌟 Key Features
+MoodiOS isn’t just a feature set — it is a living, breathing emotional companion wrapped in the form of an operating system. Every layer listens to you, adapts to you, and shapes itself around the person behind the screen, not just the tasks on it. This is computing with a heartbeat.
 
 ---
 
-**MoodiOS isn’t just technology.  
-It’s empathy in digital form.  
-A future where devices don’t just work —  
-they care.**
+### 1. **Real‑Time Emotion Detection — Technology That Truly Sees You**  
+MoodiOS senses the emotions you never say aloud.  
+It understands your micro‑expressions, voice tone, typing rhythm, gesture intensity, posture, and environment.  
+Like a gentle observer who knows you beyond words, it recognizes stress, fatigue, flow, creativity, overwhelm, or joy — and responds instantly with care.
+
+---
+
+### 2. **Adaptive UI Engine — A Screen That Breathes With Your Heart**  
+Your digital environment becomes emotionally alive.  
+Soft warmth for calm.  
+Quiet darkness for fatigue.  
+Vibrant energy for creativity.  
+Every color shift, motion ripple, and layout change is intentional, gentle, and beautifully human — mirroring your emotional state with grace.
+
+---
+
+### 3. **Mood‑Based Notifications — Protecting Your Peace**  
+When your mind feels heavy, MoodiOS becomes your guardian.  
+It slows interruptions, hides chaos, and only delivers what truly matters.  
+Your attention becomes sacred — your wellbeing, prioritized.
+
+---
+
+### 4. **Emotion‑Driven Productivity Modes — The Perfect State for Every Mind**  
+MoodiOS adapts to the emotional rhythm of your day:
+
+- **Focus Mode** for deep, distraction‑free flow  
+- **Calm Mode** when stress spikes  
+- **Creative Mode** for moments of inspiration  
+- **Rest Mode** when your energy falls  
+- **Motivation Mode** when momentum rises  
+- **Stressed Mode** for instant mental relief  
+- **Overwhelmed Mode** for full digital protection  
+- **Neutral Mode** for balanced, steady sessions  
+- **Joyful Mode** for emotionally bright experiences  
+
+It feels like the OS always knows what you need next.
+
+---
+
+### 5. **Emotion Timeline — A Window Into Your Inner Journey**  
+Watch how your emotions rise, fall, and transition throughout the day.  
+Not to track you — but to understand you.  
+MoodiOS reflects your emotional patterns so you can recognize stress, celebrate progress, and build healthier habits.
+
+---
+
+### 6. **Behavior Intelligence Engine — Understanding What You Don’t Say**  
+MoodiOS detects subtle emotional patterns:
+
+- burnout signals  
+- frustration peaks  
+- fatigue waves  
+- your natural productivity rhythm  
+
+It responds gently: simplifying UI, dimming the world, suggesting breaks, or guiding you back into balance.
+
+---
+
+### 7. **Environment‑Aware Emotion Sensing — Because Emotions Live in Context**  
+Your feelings don’t exist in isolation.  
+MoodiOS reads ambient light, noise levels, environmental activity, and posture.  
+It understands when your surroundings are overwhelming — and adjusts your digital world accordingly.
+
+---
+
+### 8. **Emotion‑Adaptive Music & Soundscapes — Healing Through Sound**  
+Calming ambience when you’re anxious.  
+Deep-focus tones when your mind sharpens.  
+Soft sparkles when creativity blooms.  
+Silence when you need clarity.  
+MoodiOS uses emotion‑aware sound as a tool for wellbeing.
+
+---
+
+### 9. **Emotional Safety Mode — Comfort When You Need It Most**  
+In moments of emotional distress, MoodiOS steps in gently:  
+The screen softens.  
+Noise fades.  
+Animations slow.  
+A breathing guide appears.  
+Your digital world becomes a safe, comforting space — without a single word spoken.
+
+---
+
+### 10. **Premium Adaptive Elements — Subtle Touches That Feel Human**  
+- **Heartbeat UI Pulse** that mirrors emotional transitions  
+- **Emotional Aura Lighting** surrounding core UI  
+- **Micro‑Motion Harmony** adjusting animation speed  
+- **Creative Inspiration Wall** when your ideas need a spark  
+
+These delicate details make MoodiOS feel not just responsive — but alive.
+
+---
+
+### 11. **Developer APIs — A New Emotional Software Ecosystem**  
+With simple emotional endpoints, apps can finally feel you too:
+
+- `/emotion/current`  
+- `/emotion/predict`  
+- `/emotion/state`  
+- `/adapt/ui`  
+- `/adapt/notifications`  
+
+This opens the door to the world’s first network of emotion‑native applications.
+
+---
+
+**MoodiOS isn’t technology that reacts —  
+it’s technology that understands.  
+Not an interface you use —  
+but an emotional space you live in.**
+
+This is the future of computing with a heart.
 
 ---
 
 ## 9. 🎭 Emotional Modes 
-
-MoodiOS doesn’t just react — it *understands*.  
-Each emotional mode feels natural, precise, and deeply aligned with real human behavior.  
-These modes aren’t just features… they feel like your device is genuinely sensing your inner state.
-
----
-
-### 🌿 **Calm Mode** — When Your Mind Needs Peace  
-**Triggered by:**  
-- rising stress signals  
-- rapid app switching  
-- short, tense typing bursts  
-
-**Reactions that feel real:**  
-- softens notifications and reduces noise  
-- warms the color palette to soothe your eyes  
-- activates gentle animations that relax your mind  
-
-*It feels like your device is telling you: “Slow down. I’m here to calm your space.”*
+MoodiOS doesn’t simply react to behavior — it *connects* with emotion.  
+Each mode is crafted to feel natural, precise, and beautifully human, as if your device can sense your inner world and gently adapt to it.  
+These modes don’t feel like “features”…  
+They feel like **presence.**
 
 ---
 
-### 🎯 **Focus Mode** — When You Enter Deep Work  
+### 🌿 **Calm Mode — Your Safe, Quiet Space**  
 **Triggered by:**  
-- steady concentration  
-- strong flow patterns  
-- long uninterrupted work periods  
+- rising stress  
+- frantic app switching  
+- tense typing patterns  
 
-**Reactions that help you focus:**  
-- hides distraction-heavy elements  
-- locks social media automatically  
-- builds a clean, tunnel-like workspace  
+**How MoodiOS cares for you:**  
+- softens notifications  
+- warms color tones  
+- activates slow, soothing animations  
 
-*It feels like your device protects your attention with everything it has.*
+*It feels like your device takes a deep breath with you.*
 
 ---
 
-### 🎨 **Creative Mode** — When Ideas Start to Spark  
+### 🎯 **Focus Mode — When You Need Deep, Unbroken Flow**  
 **Triggered by:**  
-- rising excitement  
-- rapid creative bursts  
-- elevated energy patterns  
+- sustained concentration  
+- long periods of work  
+- strong flow signals  
 
-**Reactions that inspire:**  
-- bright, expressive UI  
-- floating idea widgets  
-- instant access to inspiration tools  
+**How MoodiOS supports your clarity:**  
+- hides all distractions  
+- locks social media  
+- narrows the workspace into a tunnel of focus  
 
-*It feels like your device celebrates your creativity with you.*
+*It feels like the world quiets down so your mind can rise.*
 
 ---
 
-### 😴 **Tired Mode** — When Your Energy Drops  
+### 🎨 **Creative Mode — When Your Imagination Sparks to Life**  
 **Triggered by:**  
-- slower typing  
-- low physical posture  
-- reduced interaction speed  
+- elevated excitement  
+- fast creative bursts  
+- high-energy behavior  
 
-**Reactions that care:**  
-- dims harsh brightness  
-- suggests gentle breaks  
-- shifts to minimal, quiet UI  
+**How MoodiOS fuels your ideas:**  
+- bright, expressive themes  
+- floating idea prompts  
+- instant access to creativity tools  
 
-*It feels like your device whispers: “Rest a bit. You deserve it.”*
+*It feels like your device is cheering for your imagination.*
 
 ---
 
-### 🔥 **Motivated Mode** — When You’re Unstoppable  
+### 😴 **Tired Mode — When Your Mind and Body Slow Down**  
 **Triggered by:**  
-- consistent workflow  
+- sluggish typing  
+- poor posture  
+- slow interactions  
+
+**How MoodiOS restores your energy:**  
+- dims brightness  
+- simplifies the interface  
+- gently encourages rest  
+
+*It feels like your device placing a hand on your shoulder, whispering: “It’s okay to pause.”*
+
+---
+
+### 🔥 **Motivated Mode — When You Feel Unstoppable**  
+**Triggered by:**  
 - fast task completion  
-- high drive signals  
+- consistent workflow  
+- strong drive signals  
 
-**Reactions that amplify your momentum:**  
-- expands your goals  
-- unlocks productivity boosters  
-- intensifies UI energy and rhythm  
+**How MoodiOS amplifies your fire:**  
+- unlocks productivity boosts  
+- intensifies UI energy  
+- expands goals and challenges  
 
-*It feels like your device becomes your biggest supporter.*
-
----
-
-Each mode feels natural, seamless, and emotionally aligned —  
-**because MoodiOS isn’t just tracking your behavior…  
-it’s understanding your heart.**
+*It feels like your device running beside you, matching your pace.*
 
 ---
 
-## 10. 🧬 Core Technology — The Heartbeat Behind MoodiOS
+### 😖 **Stressed Mode — When Life Feels Heavy**  
+**Triggered by:**  
+- rapid emotion spikes  
+- anxiety patterns  
+- tense facial cues  
 
-MoodiOS is powered by a deeply human‑centered technology stack designed to feel natural, accurate, and emotionally aware.  
-Every system works together like the senses, memory, and intuition of a caring companion — creating a digital environment that genuinely understands *you*.
+**How MoodiOS protects you:**  
+- suppresses all noise  
+- engages gentle ripple calm animation  
+- activates deep soothing color tones  
+
+*It feels like your digital world wrapping you in comfort.*
+
+---
+
+### 😵 **Overwhelmed Mode — When Everything Is Too Much**  
+**Triggered by:**  
+- emotional overload  
+- multitasking chaos  
+- burnout patterns  
+
+**How MoodiOS safeguards your mental space:**  
+- pauses all non-essential notifications  
+- simplifies UI drastically  
+- activates the Emotional Safety Layer  
+
+*It feels like everything around you finally slows down.*
+
+---
+
+### 🙂 **Neutral Mode — Your Balanced Everyday State**  
+**Triggered by:**  
+- steady, normal activity  
+- no emotional extremes  
+
+**How MoodiOS stays steady with you:**  
+- balanced UI  
+- normal notifications  
+- consistent, gentle presence  
+
+*It feels like quiet harmony.*
+
+---
+
+### 😁 **Joyful Mode — When Your Heart Feels Light**  
+**Triggered by:**  
+- joyful expressions  
+- positive voice tone  
+- energetic behavior patterns  
+
+**How MoodiOS celebrates with you:**  
+- vibrant, glowing colors  
+- soft celebratory micro-animations  
+- creative spark enhancements  
+
+*It feels like your device smiling with you.*
+
+---
+
+## ❤️ **Every Mode Feels Human**  
+In MoodiOS, emotional modes are not just signals —  
+they’re moments of connection between you and your digital world.  
+
+**Because MoodiOS isn’t analyzing you…  
+it’s understanding you.**
+
+---
+
+## 10. 🧬 Core Technology 
+
+MoodiOS is built like a digital soul — a deeply human‑centered technological ecosystem designed to feel intuitive, sensitive, and emotionally alive.  
+Every layer works together like senses, memory, intuition, and compassion in a caring companion, creating a computing experience that genuinely understands *you*.
 
 ---
 
 ### 1. **Multimodal Emotion AI — Technology That Feels Your Feelings**  
-MoodiOS doesn’t rely on just one signal.  
-It reads your emotional state the way a human would — through many subtle cues:
+MoodiOS doesn’t guess. It perceives.
 
-- micro‑expressions and facial signals  
-- voice tone and rhythm  
-- typing speed and pressure patterns  
-- gestures, touch patterns, and posture  
-- your context — tasks, time, environment  
+It reads your emotional state the same way a human does — by combining countless subtle signals:
 
-This fusion makes MoodiOS feel uncannily accurate, almost like it can “sense” your inner state.
+- micro‑expressions & facial emotion signatures  
+- voice tone, tremble, pacing & rhythm  
+- typing speed, pressure patterns & pauses  
+- gesture intensity, touch behavior & posture  
+- ambient cues: light, noise, temperature  
+- contextual cues: tasks, app history, time of day  
 
----
-
-### 2. **Adaptive Interface Engine — A UI That Responds Like a Living Space**  
-The interface changes exactly when you need it to — softly, intelligently, without you asking.  
-It adjusts:
-
-- colors to soothe or energize  
-- motion to calm or inspire  
-- contrast to match your mental clarity  
-- layout to simplify your cognitive load  
-- behavior to support your emotional flow  
-
-Your screen becomes a living environment shaped around your heart.
+These signals form a single emotional portrait —  
+so accurate it feels like MoodiOS can sense your inner world.
 
 ---
 
-### 3. **Emotion Memory Model — Understanding Your Emotional Journey**  
-MoodiOS remembers short-term emotional patterns to forecast mood shifts.  
-But it does this **locally**, privately, securely.  
-No cloud. No storage.  
-Just a gentle awareness that helps it react with empathy —  
-like noticing when you’re slowly getting stressed or tired.
+### 2. **Adaptive Interface Engine — A UI That Moves With Your Heart**  
+Your interface becomes a living environment that shifts with your emotions —  
+soft when you need comfort, bright when you need energy, quiet when you need to think.
+
+It intelligently adjusts:
+
+- colors that soothe or ignite creativity  
+- motion speed to match emotional rhythm  
+- contrast for clarity during fatigue  
+- layout simplicity for cognitive relief  
+- behavioral flow aligned with your mental state  
+- emotional aura lighting around elements  
+- micro‑motion harmony that slows or speeds animations  
+
+Your screen doesn’t just *change* —  
+it *understands*.
+
+---
+
+### 3. **Emotion Memory Model — A Gentle Awareness of Your Emotional Journey**  
+MoodiOS remembers short‑term emotional patterns to gently anticipate what you may need next.
+
+But it does all of this **locally**, privately, and safely.
+
+- No cloud  
+- No storage  
+- No identity tracking  
+
+Just a moment‑to‑moment emotional awareness —  
+like a companion noticing your mood before you say a word.
 
 ---
 
 ### 4. **Decision Intelligence Layer — Your Emotional Co‑Pilot**  
-This is the brain that decides *how* to help you.  
-It learns your patterns, mood transitions, habits, and emotional triggers to choose the right action at the right moment:
+This is the intuitive brain of MoodiOS —  
+an emotional decision engine that chooses the right action at the right moment.
 
-- Should notifications pause?  
-- Should the UI soften?  
-- Should Focus Mode activate?  
-- Should it suggest a break?  
-- Should it amplify your creativity?  
+It understands your:
 
-It’s like having a digital companion with instincts — always acting with your wellbeing in mind.
+- patterns  
+- transitions  
+- emotional triggers  
+- productivity curves  
+- stress build‑ups  
+- creative peaks  
+
+And makes decisions such as:
+
+- “Should I pause notifications?”  
+- “Should I soften the UI?”  
+- “Is it time to start Focus Mode?”  
+- “Should I suggest a break?”  
+- “Is this a moment to inspire creativity?”  
+- “Do you need calm — or motivation?”  
+
+It behaves like a digital intuition —  
+always acting in your best interest, gently and intelligently.
+
+---
+
+### 5. **Premium Emotion Systems — The Human Touch in Technology**  
+To make MoodiOS feel truly alive, new emotional subsystems enhance the experience:
+
+- **Emotion‑Adaptive Soundscapes** for calm, focus & creativity  
+- **Heartbeat UI Pulse** reacting to emotional shifts  
+- **Guided Breathing Engine** for instant stress relief  
+- **Emotional Safety Layer** to support vulnerable moments  
+- **Creative Inspiration Wall** for idea flow  
+- **Micro‑Motion Harmony** for emotional animation control  
+- **Adaptive Aura Lighting** that glows softly with mood changes  
+
+These elements make MoodiOS feel less like software  
+and more like a companion who understands the human heart.
 
 ---
 
 MoodiOS isn’t just engineered.  
 It’s *felt*.  
-A technological ecosystem built not just to function —  
+It’s a technological ecosystem built not merely to function —  
 but to understand, adapt, and truly care.
 
 ---
@@ -583,114 +739,157 @@ Turning human emotion into digital empathy. ❤️**
 
 ---
 
-## 12. 🏛 System Architecture 
+## 12. 🏛 System Architecture
 
-The architecture of MoodiOS isn’t just a technical layout — it’s a beautifully orchestrated ecosystem where every layer works together like the senses, memory, intuition, and actions of an emotionally aware companion.  
-Each part listens, understands, decides, and responds… exactly when you need it.
+The architecture of MoodiOS is not just technical design —  
+it is a living emotional organism.  
+Every layer works like the senses, memory, intuition, and empathy of a caring companion.  
+Each part listens to you, understands you, makes thoughtful decisions,  
+and transforms your digital world in the exact moment you need support.
+
+This isn’t architecture.  
+This is **digital humanity**.
 
 ---
 
 ### 🥽 **1. Sensing Layer — Where Emotion Begins**  
-This is the “sensory system” of MoodiOS.  
-It captures emotional signals from:
+This is the sensory foundation of MoodiOS — the place where feeling is first understood.  
+It continuously captures emotional signals from:
 
-- facial expressions  
-- voice tone  
-- typing rhythm  
-- touch gestures  
-- posture  
-- environmental cues  
+- facial micro‑expressions  
+- voice tone, tremble, and rhythm  
+- typing speed and behavioral patterns  
+- gesture intensity and touch cues  
+- body posture and fatigue signals  
+- environmental cues (light, noise, ambience)  
+- contextual cues (apps, tasks, time of day)
 
-Just like your own senses help you understand the world, this layer helps MoodiOS understand *you*.
+Just as your own senses tell your mind how you feel,  
+this layer tells MoodiOS how *you* feel.
 
 ---
 
 ### 🔍 **2. Processing Layer — The Emotional Brain**  
-Here, raw signals become meaning.  
+Here, raw emotional inputs become meaning.
+
 This layer performs:
 
 - feature extraction  
-- pattern recognition  
+- emotional pattern recognition  
 - multimodal AI fusion  
-- emotion vector creation  
+- creation of a unified emotional vector  
+- noise filtering for accuracy  
 
-It’s where MoodiOS learns what your gestures, tone, or expressions truly mean — calm, stressed, tired, inspired.
+This is where MoodiOS learns whether your gestures mean frustration,  
+your typing rhythm means stress,  
+or your silence means fatigue.
+
+Emotions become visible — and understandable.
 
 ---
 
 ### 🌐 **3. Context Layer — Understanding Your World**  
-Emotions don’t exist alone; they depend on context.  
-This layer analyzes:
+Emotions don't exist alone.  
+They are shaped by your circumstances.
 
-- your tasks  
-- your open apps  
-- your time of day  
-- your environment  
-- your productivity rhythm  
+This layer interprets:
 
-It gives MoodiOS emotional accuracy, not just emotion guesses.
+- your current tasks  
+- apps you’re using  
+- time of day  
+- your energy rhythm  
+- environmental activity  
+- recent emotional patterns  
+
+Context gives MoodiOS depth — the difference between assumptions and true understanding.
 
 ---
 
 ### 🧠 **4. Decision Layer — The Intuition Engine**  
-This is the “heart + brain” of MoodiOS.  
-It decides how to help you based on emotional signals and context:
+This is the emotional intelligence of MoodiOS —  
+the part that makes wise, caring, timely decisions.
 
-- should it dim the UI?  
-- should Focus Mode activate?  
-- should notifications pause?  
-- should it nudge you to rest?  
-- should creative tools open?  
+It asks:
 
-It acts with care, timing, and emotional intelligence.
+- Should the UI calm down now?  
+- Is it time to suppress notifications?  
+- Should Focus Mode protect your attention?  
+- Do you need rest?  
+- Are you ready for creativity?  
+- Should emotional safety mode activate?  
 
----
-
-### 🎨 **5. Adaptive UI Layer — Your Screen, Alive**  
-Once decisions are made, the UI transforms:
-
-- color shifts  
-- motion changes  
-- layout simplification  
-- boosted creative themes  
-- calm, soothing visuals  
-
-Your digital world moves with your emotions.
+It behaves like a digital intuition — gentle, perceptive, and always on your side.
 
 ---
 
-### ⚙️ **6. App Behavior Layer — Emotion‑Aware Interactions**  
-MoodiOS influences how apps behave:
+### 🎨 **5. Adaptive UI Layer — Your Screen, Alive and Emotionally Aware**  
+Once decisions are made, the UI transforms with emotional grace:
 
-- muting noise during stress  
-- launching tools during creativity  
+- mood‑responsive color shifts  
+- motion harmony (slower animations during stress, faster during motivation)  
+- emotional aura lighting around UI elements  
+- softer layouts during overwhelm  
+- bright, creative palettes when energy rises  
+- deep calm visuals during distress  
+- seamless Dark/Light mode transitions  
+
+Your interface becomes a living emotional mirror.
+
+---
+
+### ⚙️ **6. App Behavior Layer — Emotion‑Sensitive Interactions**  
+Here, MoodiOS influences how apps behave to match your emotional state:
+
+- muting apps during stress  
+- launching creativity tools when ideas spark  
 - adjusting complexity during fatigue  
-- modifying app recommendations  
+- rearranging recommendations based on emotional patterns  
+- engaging soundscapes or silence when needed  
 
-Apps begin to feel emotionally intelligent too.
+Apps no longer act blindly —  
+they act with emotional awareness.
 
 ---
 
-### 🔌 **7. API Layer — Opening the Emotional Ecosystem**  
-This layer lets developers create apps that respond to human feelings:
+### 🔊 **7. Sensory Expression Layer — The Human Touch of Technology**  
+A new dedicated layer added for premium, emotion‑native interactions:
+
+- emotion‑adaptive soundscapes  
+- breathing guide engine  
+- heartbeat UI pulse  
+- creative inspiration wall  
+- ambient emotional particles  
+- micro‑interaction vibrations (simulated)  
+
+This is the layer that brings soul to MoodiOS —  
+subtle signals that make the entire OS feel human.
+
+---
+
+### 🔌 **8. API Layer — Opening the Emotional Ecosystem**  
+This layer allows developers to build apps that feel emotion too:
 
 - `/emotion/current`  
 - `/emotion/predict`  
+- `/emotion/state`  
 - `/adapt/ui`  
 - `/adapt/notifications`  
+- `/adapt/sound`  
 
-MoodiOS becomes the foundation for a new era of human‑aware software.
+This creates a world where apps, devices, and interfaces  
+all speak the language of emotion.
 
 ---
 
 ### 🧩 **Together, These Layers Form a Living Architecture**  
-An OS that senses.  
-An OS that understands.  
-An OS that adapts.  
-An OS that feels.
+An OS that senses you.  
+An OS that understands you.  
+An OS that acts with emotional clarity.  
+An OS that adapts with compassion.  
+An OS that feels alive.
 
-**This is MoodiOS — technology built like a human mind,  
-designed to protect, support, and elevate you.**
+**This is MoodiOS — technology designed like a human mind,  
+built to protect, support, and elevate your emotional world.**
 
 ---
 
@@ -698,280 +897,284 @@ designed to protect, support, and elevate you.**
 
 ```
 
-                         ┌─────────────────────────────────────────┐
-                         │             MoodiOS System              │
-                         │        "A Living Emotional Engine"      │
-                         └─────────────────────────────────────────┘
-                                        ▲           ▲
-                                        │           │
-                         Emotional Signals      User Context
-                                        │           │
-                                        ▼           ▼
+                        ┌───────────────────────────────────────────┐
+                        │               MoodiOS System              │
+                        │      “A Living, Emotion‑Native Engine”    │
+                        └───────────────────────────────────────────┘
+                                        ▲              ▲
+                                        │              │
+                             Emotional Signals     User Context
+                                        │              │
+                                        ▼              ▼
 
-┌──────────────────────────────────────────────────────────────────────────┐
-│                         1. SENSING LAYER (Inputs)                        │
-│  - Facial Expressions     - Touch Gestures      - Posture                │
-│  - Voice Tone             - Typing Rhythm       - Environmental Cues     │
-└──────────────────────────────────────────────────────────────────────────┘
+┌───────────────────────────────────────────────────────────────────────────┐
+│                       1. SENSING LAYER (Inputs)                           │
+│  - Facial Expressions      - Gesture Intensity       - Environmental Cues │
+│  - Voice Tone              - Touch Patterns          - Light & Noise      │
+│  - Typing Rhythm           - Posture Detection       - App Context        │
+└───────────────────────────────────────────────────────────────────────────┘
                                         │
                                         ▼
-┌──────────────────────────────────────────────────────────────────────────┐
-│                    2. PROCESSING LAYER (Emotional Brain)                 │
-│  - Feature Extraction                                                     │
-│  - Pattern Recognition                                                    │
-│  - Multimodal Fusion                                                      │
-│  - Emotion Vector Creation                                                │
-└──────────────────────────────────────────────────────────────────────────┘
-                                        │
-                                        ▼
-┌──────────────────────────────────────────────────────────────────────────┐
-│                        3. CONTEXT LAYER (Your World)                     │
-│  - Open Apps           - Tasks                                            │
-│  - Time of Day         - Environment                                      │
-│  - Productivity Rhythm - Recent Behavior                                  │
-└──────────────────────────────────────────────────────────────────────────┘
-                                        │
-                                        ▼
-┌──────────────────────────────────────────────────────────────────────────┐
-│                 4. DECISION LAYER (The Intuition Engine)                 │
-│  - Should UI calm down?                                                   │
-│  - Should notifications pause?                                            │
-│  - Should Focus Mode activate?                                            │
-│  - Should break suggestions appear?                                       │
-│  - Should creativity tools activate?                                      │
-└──────────────────────────────────────────────────────────────────────────┘
-                                        │
-                                        ▼
-┌──────────────────────────────────────────────────────────────────────────┐
-│                     5. ADAPTIVE UI LAYER (Living Screen)                 │
-│  - Color Shifts         - Layout Adjustments                              │
-│  - Motion Changes       - Soothing Visuals                                │
-│  - Mood-Based Themes    - Creative Enhancements                           │
-└──────────────────────────────────────────────────────────────────────────┘
-                                        │
-                                        ▼
-┌──────────────────────────────────────────────────────────────────────────┐
-│                 6. APP BEHAVIOR LAYER (Emotion-Aware Apps)               │
-│  - Adjust App Complexity                                                  │
-│  - Launch Tools Automatically                                             │
-│  - Modify Recommendations                                                 │
-│  - Silence Distractions                                                   │
-└──────────────────────────────────────────────────────────────────────────┘
-                                        │
-                                        ▼
-┌──────────────────────────────────────────────────────────────────────────┐
-│                     7. API LAYER (Emotional Ecosystem)                    │
-│  - /emotion/current   - /emotion/predict                                  │
-│  - /adapt/ui          - /adapt/notifications                              │
-│  Enables developers to build emotion‑aware applications.                  │
-└──────────────────────────────────────────────────────────────────────────┘
 
-                         ▼
-         ┌───────────────────────────────────────────┐
-         │     MoodiOS: A System That Senses,        │
-         │     Understands, Decides & Adapts          │
-         └───────────────────────────────────────────┘
+┌───────────────────────────────────────────────────────────────────────────┐
+│                   2. PROCESSING LAYER (Emotional Brain)                   │
+│  - Feature Extraction                                                      │
+│  - Pattern Recognition                                                     │
+│  - Multimodal Fusion                                                       │
+│  - Emotion Vector Creation                                                 │
+│  - Noise Filtering                                                         │
+└───────────────────────────────────────────────────────────────────────────┘
+                                        │
+                                        ▼
 
+┌───────────────────────────────────────────────────────────────────────────┐
+│                         3. CONTEXT LAYER (Your World)                     │
+│  - Open Apps               - Tasks                                         │
+│  - Time of Day             - Environment State                             │
+│  - Productivity Rhythm     - Recent Behavior                               │
+│  - Emotional History       - Activity Awareness                            │
+└───────────────────────────────────────────────────────────────────────────┘
+                                        │
+                                        ▼
+
+┌───────────────────────────────────────────────────────────────────────────┐
+│                     4. DECISION LAYER (Intuition Engine)                  │
+│  - Trigger Emotional Modes                                                 │
+│  - Decide UI Transformations                                               │
+│  - Pause / Prioritize Notifications                                        │
+│  - Recommend Rest or Focus                                                 │
+│  - Activate Soundscapes or Safety Layer                                    │
+│  - Boost Creativity or Motivation                                          │
+└───────────────────────────────────────────────────────────────────────────┘
+                                        │
+                                        ▼
+
+┌───────────────────────────────────────────────────────────────────────────┐
+│                  5. ADAPTIVE UI LAYER (Living Emotional Screen)           │
+│  - Color Shifts              - Emotion-Based Motion Speeds                 │
+│  - Layout Adjustments        - Micro‑Motion Harmony                        │
+│  - Soothing Visuals          - Dynamic Focus Tunnels                       │
+│  - Mood Themes               - Aura Lighting                               │
+│  - Perfect Light/Dark Mode   - Safety Soft UI                              │
+└───────────────────────────────────────────────────────────────────────────┘
+                                        │
+                                        ▼
+
+┌───────────────────────────────────────────────────────────────────────────┐
+│                 6. APP BEHAVIOR LAYER (Emotion‑Aware Apps)                │
+│  - Adaptive App Complexity                                                 │
+│  - Launch Creative Tools Automatically                                     │
+│  - Silence or Prioritize Alerts                                            │
+│  - Contextual App Recommendations                                          │
+│  - Emotional Workflow Automation                                           │
+└───────────────────────────────────────────────────────────────────────────┘
+                                        │
+                                        ▼
+
+┌───────────────────────────────────────────────────────────────────────────┐
+│            7. SENSORY EXPRESSION LAYER (Human‑Like Emotional Output)      │
+│  - Emotion‑Adaptive Soundscapes                                            │
+│  - Breathing Guide Engine                                                  │
+│  - Heartbeat UI Pulse                                                      │
+│  - Ambient Emotional Particles                                             │
+│  - Inspiration Wall                                                        │
+│  - Subtle Vibration / Haptic Simulation                                    │
+└───────────────────────────────────────────────────────────────────────────┘
+                                        │
+                                        ▼
+
+┌───────────────────────────────────────────────────────────────────────────┐
+│                       8. API LAYER (Emotional Ecosystem)                  │
+│  - /emotion/current        - /emotion/state                                │
+│  - /emotion/predict        - /adapt/ui                                     │
+│  - /adapt/notifications    - /adapt/sound                                  │
+│  Enables third-party developers to build emotion‑native applications.      │
+└───────────────────────────────────────────────────────────────────────────┘
+                                        │
+                                        ▼
+             ┌──────────────────────────────────────────────────┐
+             │   MoodiOS: A System That Senses, Understands,   │
+             │   Decides & Adapts With Compassion and Clarity   │
+             └──────────────────────────────────────────────────┘
 ```
 
 ---
 
-# 12. 📦 Technical Stack
+## 13. 📦 Technical Stack 
 
-MoodiOS is engineered as a **privacy-first, edge-native, multimodal AI operating layer** — designed to run seamlessly across devices while understanding and adapting to human emotional states in real time.
+MoodiOS is engineered as a **privacy‑first, edge‑native, multimodal AI operating layer** designed to understand human emotions in real time.  
+Unlike traditional systems that rely on cloud pipelines or static rules, MoodiOS is a **low‑latency, on‑device intelligence engine**, combining deep learning, adaptive UI rendering, and OS‑level integration into a seamless emotional experience.
 
-Unlike traditional systems, MoodiOS does not rely on static inputs or cloud-heavy pipelines. Instead, it operates as a **low-latency, on-device intelligence engine**, combining advanced machine learning, OS-level integration, and adaptive UI rendering.
-
----
-
-## 🧠 AI & Machine Learning Core
-
-At the heart of MoodiOS lies a **multimodal emotion intelligence engine** capable of interpreting facial expressions, voice signals, and behavioral patterns.
-
-### Core Stack
-- **Python 3.11+** — primary ML development environment  
-- **PyTorch** — deep learning (CNNs, Transformers, temporal models)  
-- **ONNX Runtime** — optimized edge inference & cross-platform deployment  
-- **OpenCV** — real-time facial signal processing  
-- **MediaPipe** — high-precision facial landmark tracking  
-- **Librosa** — audio feature extraction (pitch, tone, energy)  
-- **PyAudio** — live microphone streaming  
-- **NumPy / Pandas** — preprocessing & numerical pipelines  
-
-### Model Architecture
-- **CNNs** → facial emotion detection  
-- **Transformers** → contextual understanding of user state  
-- **LSTM / Temporal Models** → emotion tracking over time  
-- **Fusion Models** → combining vision + audio + behavior  
-
-> MoodiOS functions as an **Edge AI system**, ensuring all critical inference happens locally for speed, privacy, and reliability.
+Every component in this stack was chosen to ensure one thing:  
+**technology that can feel, respond, and adapt — instantly, privately, and beautifully.**
 
 ---
 
-## ⚡ Real-Time Processing & Event Layer
+## 🧠 AI & Machine Learning Core  
+At the heart of MoodiOS lies a **multimodal emotional intelligence engine** capable of reading your face, voice, typing, gestures, and environment with remarkable sensitivity.
 
-MoodiOS operates on a **sub-second adaptive loop**, enabling instant response to emotional changes.
+### Core Stack  
+- **Python 3.11+** — primary environment for ML development  
+- **PyTorch** — deep models (CNNs, Transformers, LSTMs)  
+- **ONNX Runtime** — edge‑optimized inference  
+- **OpenCV** — real-time facial/emotional signal extraction  
+- **MediaPipe** — landmark + posture detection  
+- **Librosa** — voice tone & energy feature extraction  
+- **PyAudio** — live microphone feeds  
+- **NumPy / Pandas** — preprocessing & pipeline flows  
 
-- **WebRTC** — real-time video & audio ingestion  
-- **WebSockets** — ultra-low latency bidirectional communication  
+### Model Architecture  
+- **CNNs** → facial emotion decoding  
+- **Transformers** → contextual emotional understanding  
+- **LSTM / Temporal Models** → mood tracking over time  
+- **Fusion Models** → merging vision + audio + behavior  
+
+> All inference happens **on-device**, ensuring speed, privacy, and emotional intimacy.
+
+---
+
+## ⚡ Real-Time Processing & Event Layer  
+MoodiOS runs on a **sub‑second adaptive loop**, updating your emotional state with the speed of thought.
+
+- **WebRTC** — real-time camera & audio streams  
+- **WebSockets** — ultra‑low latency emotional updates  
 - **gRPC** — high-performance microservice communication  
 
-### Execution Layer
-- **Node.js (Primary)** — real-time orchestration & event routing  
-- **Rust (Optional High-Performance Layer)** — ultra-low latency emotion processing  
+### Execution Layer  
+- **Node.js (Primary)** — real-time orchestration  
+- **Rust (Optional)** — high‑performance emotional pipeline  
 
-### State & Messaging
-- **Redis** — in-memory emotional state cache  
-- **DuckDB** — local analytical queries  
-- **MQTT** — lightweight signal/event streaming  
+### State & Messaging  
+- **Redis** — in-memory emotional state  
+- **DuckDB** — fast local analytics  
+- **MQTT** — event-driven emotional signaling  
 
 ---
 
-## 💻 OS Integration Layer
+## 💻 OS Integration Layer  
+To behave emotionally, MoodiOS must understand context.  
+This requires deep hooks into the underlying operating system.
 
-MoodiOS integrates deeply with the host operating system to enable **context-aware actions and adaptive behavior**.
-
-### Windows
+### Windows  
 - WinRT APIs  
-- Windows Notification System  
-- Registry & system hooks  
-- PowerShell execution layer  
-- Input/HID listeners  
+- Notification + system control  
+- Registry & background listeners  
+- PowerShell automation  
 
-### macOS
+### macOS  
 - Swift + Cocoa/AppKit  
 - AppleScript automation  
-- System-level UI & brightness control  
+- Screen/brightness controls  
 
-### Linux
-- DBus communication  
-- X11 / Wayland display servers  
-- GNOME/KDE service hooks  
+### Linux  
+- DBus messaging  
+- X11/Wayland integration  
+- GNOME/KDE notification hooks  
 
-### Android (Optional Expansion)
+### Android (Optional Expansion)  
 - Kotlin + Jetpack Compose  
-- CameraX & SensorManager  
-- On-device MLKit fallback  
+- CameraX / SensorManager  
+- MLKit fallback  
+
+> The deeper the OS insight, the more emotionally accurate the response.
 
 ---
 
-## 🎨 Adaptive UI & Experience Engine
+## 🎨 Adaptive UI & Experience Engine  
+The UI is not static.  
+It **breathes**, **glows**, **slows**, and **accelerates** with your emotional state.
 
-MoodiOS features a **fully emotion-reactive interface** that dynamically reshapes itself based on user state.
+- **React.js** — dynamic UI  
+- **Electron/Tauri** — cross‑platform system shell  
+- **TailwindCSS** — fluid emotional design system  
+- **Framer Motion** — emotion-based transitions  
+- **Canvas/WebGL** — immersive effects  
+- **Zustand / Redux** — real-time emotional state store  
 
-- **React.js** — dynamic UI rendering  
-- **Electron / Tauri** — cross-platform system shell  
-- **TailwindCSS** — adaptive design system  
-- **Framer Motion** — emotion-driven animations  
-- **Canvas / WebGL** — immersive transitions  
-- **Zustand / Redux** — real-time emotional state management  
-
-> The UI is not static — it evolves continuously based on emotional context.
-
----
-
-## 📡 Backend & Microservices Architecture
-
-MoodiOS uses a **modular microservice architecture** optimized for scalability and clarity.
-
-### Service Separation
-- **FastAPI** → AI inference engine (emotion detection)  
-- **Node.js (Express/NestJS)** → real-time logic & orchestration  
-- **Redis** → ephemeral emotional memory  
-- **SQLite** → lightweight local persistence  
-
-### Deployment
-- **Docker** — containerized services for portability and scaling  
+> Your screen becomes a living emotional environment.
 
 ---
 
-## 🔌 MoodiOS SDK Ecosystem
+## 📡 Backend & Microservices Architecture  
+MoodiOS is modular, scalable, and built like a modern emotional nervous system.
 
-To enable a new generation of emotion-aware applications, MoodiOS provides **multi-platform SDKs**:
+### Services  
+- **FastAPI** → ML inference engine  
+- **Node.js (Express/Nest)** → real-time emotional logic  
+- **Redis** → emotional memory (ephemeral)  
+- **SQLite** → lightweight persistent state  
+
+### Deployment  
+- **Docker** → portable, isolated emotional services  
+
+---
+
+## 🔌 MoodiOS SDK Ecosystem  
+A new generation of emotion-native apps becomes possible through SDKs:
 
 - Python SDK  
-- JavaScript / TypeScript SDK  
+- JavaScript/TypeScript SDK  
 - Swift SDK  
 - Kotlin SDK  
-- Flutter (Dart) SDK  
+- Flutter SDK  
 - C# (.NET) SDK  
 
-> Developers can build apps that **respond to human emotions in real time**.
+> Developers can finally build software that *feels* the user.
 
 ---
 
-## 🔐 Security & Privacy Architecture
+## 🔐 Security & Privacy Architecture  
+Privacy isn’t a feature —  
+it is MoodiOS’ **moral foundation**.
 
-Privacy is not a feature — it is a **core design principle**.
+- Fully on-device inference  
+- Zero raw media leaving device  
+- No video/audio stored  
+- Emotion vectors stored only in RAM  
+- Sandboxed sensor access  
+- Local AES-based encryption  
+- Explicit permissions  
 
-- **100% on-device inference** (Edge AI)  
-- **Zero raw data sent to cloud**  
-- **No storage of video/audio streams**  
-- **Emotion vectors stored only in RAM (ephemeral)**  
-- **Sandboxed sensor access (camera/microphone)**  
-- **End-to-end local encryption (AES-based)**  
-- **Explicit permission control layer**  
-
-> MoodiOS ensures emotional intelligence without compromising user trust.
+> Your device understands you.  
+> **Nobody else does.**
 
 ---
 
-## ⚙ DevOps & Engineering Tooling
-
-- **GitHub Projects** — roadmap & collaboration  
-- **Docker** — consistent development environments  
+## ⚙ DevOps & Engineering Tooling  
+- **GitHub Projects** — roadmap management  
+- **Docker** — reproducible environments  
 - **Prettier + ESLint** — frontend quality  
-- **Black + Ruff** — Python formatting  
-- **pytest** — backend testing  
-- **Vitest / Jest** — UI testing  
+- **Black + Ruff** — Python standards  
+- **pytest** — backend reliability  
+- **Vitest/Jest** — UI testing  
 
 ---
 
-## 🏗 Why This Stack?
+## 🏗 Why This Stack?  
+MoodiOS requires a stack that is:
 
-MoodiOS demands a system that is:
+- ⚡ Real-time  
+- 🧠 Emotion-aware  
+- 🔒 Privacy-first  
+- 🌍 Cross-platform  
+- 📈 Scalable  
+- 🎨 Adaptable  
+- 🚀 High-performance  
 
-- Real-time  
-- Emotion-aware  
-- Privacy-first  
-- Cross-platform  
-- Scalable  
-- Extensible  
-- High-performance  
+This architecture enables:
 
-This stack enables:
+- Sub-second emotional adaptation  
+- Accurate multimodal inference  
+- Zero-cloud emotional processing  
+- A living, breathing UI  
+- True emotion-native experiences
 
-- ⚡ Sub-second emotional adaptation  
-- 🧠 Accurate multimodal understanding  
-- 🔒 Complete user privacy  
-- 🎨 Dynamic, living interfaces  
-- 🌍 Platform independence  
-
----
-
-## 13. 🚀 Final Thought
-
-MoodiOS is not created as just another app —  
-it is crafted as an **intelligent emotional layer woven directly into the fabric of computing**.
-
-It doesn’t sit beside your device.  
-It sits *within its heartbeat* — sensing, understanding, and adapting to the human behind the screen.
-
-This technical stack, this architecture, this vision…  
-is designed not only to power MoodiOS today,  
-but to **scale it across the world** — across laptops, phones, AR, VR, cars, and beyond.
-
-It is built to evolve.  
-To learn.  
-To feel.  
-To become the first true bridge between human emotion and digital intelligence.
-
-**MoodiOS isn’t the future of technology —  
-it’s the future of humanity inside technology.**
+It is not just a stack —  
+it is the **technological heart** that lets MoodiOS feel human.
 
 ---
 
-## 14. 🔐 Privacy & Trust Framework — Protecting You at the Deepest Level
+## 14. 🔐 Privacy & Trust Framework
 
 MoodiOS is built on a foundation of **trust, safety, and absolute respect for your emotional world**.  
 Your feelings are personal. Your expressions are intimate. Your emotional patterns are uniquely yours —  
@@ -1254,18 +1457,45 @@ a unified ecosystem that understands you everywhere.
 
 ---
 
-# 27. 📡 Developer API
+## 27. 📡 Developer API — Building the Future of Emotion‑Native Apps
 
-Developers can build emotion‑responsive apps using simple endpoints:
+MoodiOS opens an entirely new frontier for developers:  
+**applications that understand and respond to human emotion in real time.**
 
+Through simple, powerful, on‑device endpoints, developers can tap into the emotional state of the user and adapt their interfaces, behaviors, and experiences instantly — creating software that finally *feels human*.
+
+### 🔌 Core Emotion Endpoints
+These endpoints give developers direct access to real-time emotional intelligence:
 ```
-/emotion/current
-/emotion/predict
-/adapt/ui
-/adapt/notifications
+/emotion/current        → Get the user’s current emotional state
+/emotion/predict        → Predict near‑future emotional shifts
+/emotion/state          → Detailed emotional vector (vision + audio + behavior)
 ```
 
-This opens the door to a new generation of emotionally intelligent software.
+### 🎨 Adaptive Behavior Endpoints
+Enable apps to shape themselves around the user’s emotional needs:
+```
+/adapt/ui               → Adjust UI themes, animations, layout, and mood
+/adapt/notifications    → Dynamically control notifications based on emotion
+/adapt/sound            → Trigger calm, focus, or creative soundscapes
+```
+
+### 🌐 Ecosystem Impact
+With these APIs, developers can build:
+
+- emotion‑aware productivity tools  
+- empathetic learning platforms  
+- stress‑adaptive gaming experiences  
+- wellness apps that respond to real feelings  
+- creativity tools that react to mood shifts  
+- notification systems that protect attention  
+
+MoodiOS doesn’t just make apps smarter —  
+**it makes them emotionally intelligent.**
+
+This API layer is the foundation for a new generation of software where  
+technology doesn’t just respond to input,  
+but to **the human behind it**.
 
 ---
 
