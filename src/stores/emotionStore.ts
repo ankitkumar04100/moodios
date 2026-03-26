@@ -29,11 +29,14 @@ interface EmotionStore {
 }
 
 function deriveMood(e: EmotionState): Mood {
-  if (e.stressLevel > 0.7) return 'calm';
-  if (e.energyLevel < 0.3) return 'tired';
+  if (e.stressLevel > 0.85) return 'overwhelmed';
+  if (e.stressLevel > 0.7) return 'stressed';
+  if (e.energyLevel < 0.25) return 'tired';
+  if (e.energyLevel > 0.8 && e.confidence > 0.7 && e.stressLevel < 0.3) return 'joyful';
   if (e.energyLevel > 0.7 && e.confidence > 0.5) return 'motivated';
   if (e.stressLevel < 0.3 && e.energyLevel > 0.5) return 'creative';
   if (e.confidence > 0.6) return 'focus';
+  if (e.stressLevel > 0.5) return 'calm';
   return 'neutral';
 }
 

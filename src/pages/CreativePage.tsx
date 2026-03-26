@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, Plus, X, Download, Lightbulb } from 'lucide-react';
+import { Sparkles, Plus, X, Download, Lightbulb, Palette, Shuffle, Wand2 } from 'lucide-react';
 
 interface Spark {
   id: string;
@@ -10,17 +10,47 @@ interface Spark {
 }
 
 const sparkColors = [
-  'from-pink-400 to-orange-400',
-  'from-violet-400 to-blue-400',
-  'from-emerald-400 to-teal-400',
-  'from-amber-400 to-red-400',
-  'from-cyan-400 to-indigo-400',
+  'from-pink-500/90 to-orange-400/90',
+  'from-violet-500/90 to-blue-400/90',
+  'from-emerald-500/90 to-teal-400/90',
+  'from-amber-500/90 to-red-400/90',
+  'from-cyan-500/90 to-indigo-400/90',
+  'from-rose-500/90 to-pink-400/90',
+  'from-lime-500/90 to-green-400/90',
+  'from-fuchsia-500/90 to-purple-400/90',
+];
+
+const inspirationPrompts = [
+  "What if everything was connected?",
+  "Flip the problem upside down.",
+  "What would a child do?",
+  "Remove one constraint — which one?",
+  "Combine two unrelated things.",
+  "What's the opposite approach?",
+  "If money didn't exist, then what?",
+  "Make it 10x simpler.",
+  "What would nature do?",
+  "What breaks if you go faster?",
+];
+
+const palettes = [
+  ['#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7'],
+  ['#2C3E50', '#E74C3C', '#ECF0F1', '#3498DB', '#2ECC71'],
+  ['#667eea', '#764ba2', '#f093fb', '#4facfe', '#00f2fe'],
+  ['#0F0C29', '#302B63', '#24243E', '#FF416C', '#FF4B2B'],
 ];
 
 export default function CreativePage() {
   const [sparks, setSparks] = useState<Spark[]>([]);
   const [newSpark, setNewSpark] = useState('');
   const [isAdding, setIsAdding] = useState(false);
+  const [currentPrompt, setCurrentPrompt] = useState(inspirationPrompts[0]);
+  const [activePalette, setActivePalette] = useState(0);
+
+  const shufflePrompt = () => {
+    const next = inspirationPrompts[Math.floor(Math.random() * inspirationPrompts.length)];
+    setCurrentPrompt(next);
+  };
 
   const addSpark = () => {
     if (!newSpark.trim()) return;
@@ -49,11 +79,14 @@ export default function CreativePage() {
   };
 
   return (
-    <div className="p-4 sm:p-6 lg:p-8 max-w-5xl mx-auto space-y-6">
+    <div className="p-4 sm:p-6 lg:p-8 max-w-6xl mx-auto space-y-6">
       <div className="flex items-center justify-between">
         <div>
+          <p className="text-xs text-mode-primary uppercase tracking-widest font-display flex items-center gap-1.5">
+            <Sparkles size={14} /> Creative Space
+          </p>
           <h1 className="font-display text-3xl font-bold text-foreground">Creative Playground</h1>
-          <p className="text-muted-foreground mt-1">Capture ideas as sparks. Let them float and evolve.</p>
+          <p className="text-muted-foreground mt-1 text-sm">Capture ideas as sparks. Let them float and evolve.</p>
         </div>
         <div className="flex gap-2">
           {sparks.length > 0 && (
@@ -63,6 +96,66 @@ export default function CreativePage() {
           )}
         </div>
       </div>
+
+      {/* Inspiration Widget */}
+      <motion.div
+        className="glass rounded-2xl p-6 relative overflow-hidden"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-mode-primary/5 via-mode-glow/5 to-transparent" />
+        <div className="relative flex flex-col sm:flex-row items-start sm:items-center gap-4">
+          <div className="w-12 h-12 rounded-xl bg-mode-primary/10 flex items-center justify-center shrink-0">
+            <Wand2 size={22} className="text-mode-primary" />
+          </div>
+          <div className="flex-1">
+            <p className="text-xs text-muted-foreground font-display uppercase tracking-wide">Inspiration Prompt</p>
+            <AnimatePresence mode="wait">
+              <motion.p
+                key={currentPrompt}
+                className="font-display text-lg font-semibold text-foreground mt-1"
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -5 }}
+              >
+                "{currentPrompt}"
+              </motion.p>
+            </AnimatePresence>
+          </div>
+          <button
+            onClick={shufflePrompt}
+            className="p-2.5 rounded-xl bg-mode-primary/10 text-mode-primary hover:bg-mode-primary/20 transition-colors"
+          >
+            <Shuffle size={18} />
+          </button>
+        </div>
+      </motion.div>
+
+      {/* Color Palette Widget */}
+      <motion.div
+        className="glass rounded-xl p-5"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.05 }}
+      >
+        <div className="flex items-center gap-2 mb-3">
+          <Palette size={16} className="text-mode-primary" />
+          <span className="font-display text-sm font-semibold text-foreground">Mood Palette</span>
+        </div>
+        <div className="flex gap-3">
+          {palettes.map((palette, pi) => (
+            <button
+              key={pi}
+              onClick={() => setActivePalette(pi)}
+              className={`flex gap-0.5 p-1 rounded-lg transition-all ${activePalette === pi ? 'ring-2 ring-mode-primary scale-105' : 'opacity-60 hover:opacity-100'}`}
+            >
+              {palette.map((color, ci) => (
+                <div key={ci} className="w-6 h-6 sm:w-8 sm:h-8 rounded" style={{ background: color }} />
+              ))}
+            </button>
+          ))}
+        </div>
+      </motion.div>
 
       {/* Add Spark */}
       <AnimatePresence>
@@ -103,7 +196,7 @@ export default function CreativePage() {
       {/* Sparks Grid */}
       {sparks.length === 0 ? (
         <motion.div
-          className="flex flex-col items-center justify-center py-20 text-muted-foreground"
+          className="flex flex-col items-center justify-center py-16 text-muted-foreground"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
         >
@@ -118,19 +211,19 @@ export default function CreativePage() {
               <motion.div
                 key={spark.id}
                 className="relative group"
-                initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
+                initial={{ opacity: 0, scale: 0.8, rotate: -3 }}
                 animate={{
                   opacity: 1,
                   scale: 1,
                   rotate: 0,
-                  y: [0, -4, 0],
+                  y: [0, -6, 0],
                 }}
                 exit={{ opacity: 0, scale: 0.5 }}
                 transition={{
                   y: { duration: 3 + i * 0.5, repeat: Infinity, ease: 'easeInOut' },
                 }}
               >
-                <div className={`rounded-xl p-5 bg-gradient-to-br ${spark.color} text-white shadow-lg`}>
+                <div className={`rounded-2xl p-5 bg-gradient-to-br ${spark.color} text-white shadow-xl backdrop-blur`}>
                   <p className="text-sm font-medium leading-relaxed">{spark.text}</p>
                   <p className="text-xs opacity-60 mt-3">
                     {new Date(spark.createdAt).toLocaleTimeString()}
@@ -138,7 +231,7 @@ export default function CreativePage() {
                 </div>
                 <button
                   onClick={() => removeSpark(spark.id)}
-                  className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-background border border-border flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+                  className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-background border border-border flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-sm"
                 >
                   <X size={12} className="text-muted-foreground" />
                 </button>
