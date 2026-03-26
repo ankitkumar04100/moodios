@@ -97,7 +97,7 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  /* MOOD THEMES */
+  /* ═══════ MOOD THEMES ═══════ */
   .mood-calm {
     --mode-primary: 175 60% 42%;
     --mode-glow: 175 55% 55%;
@@ -109,9 +109,7 @@
     --mode-motion-intensity: 0.4;
     --bloom-color: 175 60% 50% / 0.12;
   }
-  .mood-calm.dark {
-    --mode-surface: 175 25% 10%;
-  }
+  .mood-calm.dark { --mode-surface: 175 25% 10%; }
 
   .mood-focus {
     --mode-primary: 220 85% 55%;
@@ -124,9 +122,7 @@
     --mode-motion-intensity: 0.6;
     --bloom-color: 220 85% 60% / 0.18;
   }
-  .mood-focus.dark {
-    --mode-surface: 225 30% 8%;
-  }
+  .mood-focus.dark { --mode-surface: 225 30% 8%; }
 
   .mood-creative {
     --mode-primary: 320 75% 55%;
@@ -139,9 +135,7 @@
     --mode-motion-intensity: 1.2;
     --bloom-color: 320 75% 55% / 0.2;
   }
-  .mood-creative.dark {
-    --mode-surface: 330 25% 8%;
-  }
+  .mood-creative.dark { --mode-surface: 330 25% 8%; }
 
   .mood-tired {
     --mode-primary: 35 60% 50%;
@@ -154,9 +148,7 @@
     --mode-motion-intensity: 0.2;
     --bloom-color: 35 50% 50% / 0.1;
   }
-  .mood-tired.dark {
-    --mode-surface: 35 20% 8%;
-  }
+  .mood-tired.dark { --mode-surface: 35 20% 8%; }
 
   .mood-motivated {
     --mode-primary: 0 75% 55%;
@@ -169,9 +161,59 @@
     --mode-motion-intensity: 1.5;
     --bloom-color: 0 75% 55% / 0.2;
   }
-  .mood-motivated.dark {
-    --mode-surface: 0 20% 8%;
+  .mood-motivated.dark { --mode-surface: 0 20% 8%; }
+
+  .mood-stressed {
+    --mode-primary: 260 50% 50%;
+    --mode-glow: 280 40% 60%;
+    --mode-surface: 260 20% 95%;
+    --mode-accent: 260 45% 55%;
+    --mode-gradient-start: 260 50% 50%;
+    --mode-gradient-end: 280 40% 55%;
+    --mode-motion-duration: 1.8s;
+    --mode-motion-intensity: 0.3;
+    --bloom-color: 260 50% 55% / 0.15;
   }
+  .mood-stressed.dark { --mode-surface: 260 20% 8%; }
+
+  .mood-overwhelmed {
+    --mode-primary: 230 35% 45%;
+    --mode-glow: 250 30% 55%;
+    --mode-surface: 230 15% 94%;
+    --mode-accent: 230 30% 50%;
+    --mode-gradient-start: 230 35% 45%;
+    --mode-gradient-end: 250 30% 50%;
+    --mode-motion-duration: 2.5s;
+    --mode-motion-intensity: 0.15;
+    --bloom-color: 230 35% 50% / 0.1;
+  }
+  .mood-overwhelmed.dark { --mode-surface: 230 15% 8%; }
+
+  .mood-neutral {
+    --mode-primary: 210 30% 50%;
+    --mode-glow: 210 25% 60%;
+    --mode-surface: 210 15% 96%;
+    --mode-accent: 210 25% 55%;
+    --mode-gradient-start: 210 30% 50%;
+    --mode-gradient-end: 220 25% 55%;
+    --mode-motion-duration: 0.6s;
+    --mode-motion-intensity: 0.8;
+    --bloom-color: 210 30% 55% / 0.12;
+  }
+  .mood-neutral.dark { --mode-surface: 210 15% 8%; }
+
+  .mood-joyful {
+    --mode-primary: 45 90% 52%;
+    --mode-glow: 30 95% 58%;
+    --mode-surface: 45 30% 96%;
+    --mode-accent: 45 85% 55%;
+    --mode-gradient-start: 45 90% 52%;
+    --mode-gradient-end: 20 90% 55%;
+    --mode-motion-duration: 0.35s;
+    --mode-motion-intensity: 1.4;
+    --bloom-color: 45 90% 55% / 0.22;
+  }
+  .mood-joyful.dark { --mode-surface: 45 30% 8%; }
 
   * {
     @apply border-border;
@@ -215,6 +257,38 @@
 .bloom {
   box-shadow: 0 0 60px 20px hsl(var(--bloom-color)),
               0 0 120px 40px hsl(var(--bloom-color));
+}
+
+/* Aura glow effect */
+.aura-glow {
+  position: relative;
+}
+.aura-glow::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, hsl(var(--mode-primary) / 0.4), hsl(var(--mode-glow) / 0.2), transparent);
+  z-index: -1;
+  filter: blur(12px);
+  animation: aura-pulse 4s ease-in-out infinite;
+}
+
+@keyframes aura-pulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.02); }
+}
+
+/* Heartbeat pulse */
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  14% { transform: scale(1.05); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.03); }
+  56% { transform: scale(1); }
+}
+.heartbeat {
+  animation: heartbeat 1.5s ease-in-out infinite;
 }
 
 /* Scrollbar styling */
