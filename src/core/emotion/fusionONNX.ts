@@ -84,12 +84,15 @@ export function neuralFuse(input: FusionInput): {
   const energy = Math.max(0, Math.min(1, out[1]));
   const confidence = Math.max(0, Math.min(1, out[2]));
 
-  // Mood classification from output space
+  // Mood classification from output space — expanded for 9 moods
   let mood: Mood = 'neutral';
-  if (stress > 0.6) mood = 'calm';
-  else if (energy < 0.3) mood = 'tired';
-  else if (energy > 0.65 && confidence > 0.5) mood = 'motivated';
-  else if (stress < 0.3 && energy > 0.45) mood = 'creative';
+  if (stress > 0.85) mood = 'overwhelmed';
+  else if (stress > 0.65) mood = 'stressed';
+  else if (stress > 0.5 && energy < 0.4) mood = 'calm';
+  else if (energy < 0.25) mood = 'tired';
+  else if (energy > 0.75 && confidence > 0.65 && stress < 0.3) mood = 'joyful';
+  else if (energy > 0.6 && confidence > 0.5) mood = 'motivated';
+  else if (stress < 0.3 && energy > 0.4) mood = 'creative';
   else if (confidence > 0.55 && input.attention > 0.5) mood = 'focus';
 
   return { mood, stress, energy, confidence };
