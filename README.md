@@ -16,7 +16,7 @@
 5. [Our Vision](#5--our-vision)
 6. [What is MoodiOS?](#6--what-is-moodios)
 7. [Our Philosophy](#7--our-philosophy-tech-should-feel-human)
-8. [Key Features](#8--key-features-high-level)
+8. [Key Features](#8--key-features)
 9. [Emotional Modes](#9--emotional-modes)
 10. [Core Technology](#10--core-technology)
 11. [How Emotion Detection Works](#11--how-emotion-detection-works-simplified)
