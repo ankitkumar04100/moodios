@@ -1,4 +1,4 @@
-export type Mood = 'calm' | 'focus' | 'creative' | 'tired' | 'motivated' | 'neutral';
+export type Mood = 'calm' | 'focus' | 'creative' | 'tired' | 'motivated' | 'neutral' | 'stressed' | 'overwhelmed' | 'joyful';
 
 export interface EmotionState {
   mood: Mood;
@@ -26,9 +26,13 @@ export interface MoodTheme {
 }
 
 export const MOOD_THEMES: MoodTheme[] = [
-  { mood: 'calm', label: 'Calm', description: 'Warm, peaceful, low-motion sanctuary', icon: '🌊', className: 'mood-calm' },
+  { mood: 'calm', label: 'Calm', description: 'Warm, peaceful, low-motion sanctuary', icon: '🌿', className: 'mood-calm' },
   { mood: 'focus', label: 'Focus', description: 'High-contrast, minimal distractions', icon: '🎯', className: 'mood-focus' },
-  { mood: 'creative', label: 'Creative', description: 'Vibrant, playful, full of energy', icon: '✨', className: 'mood-creative' },
-  { mood: 'tired', label: 'Tired', description: 'Dimmed, gentle, breathing space', icon: '🌙', className: 'mood-tired' },
+  { mood: 'creative', label: 'Creative', description: 'Vibrant, playful, full of energy', icon: '🎨', className: 'mood-creative' },
+  { mood: 'tired', label: 'Tired', description: 'Dimmed, gentle, breathing space', icon: '😴', className: 'mood-tired' },
   { mood: 'motivated', label: 'Motivated', description: 'Bold, punchy, action-ready', icon: '🔥', className: 'mood-motivated' },
+  { mood: 'stressed', label: 'Stressed', description: 'Heavy suppression, deep calm shift', icon: '😖', className: 'mood-stressed' },
+  { mood: 'overwhelmed', label: 'Overwhelmed', description: 'Complete pause, emotional safety', icon: '😵', className: 'mood-overwhelmed' },
+  { mood: 'neutral', label: 'Neutral', description: 'Standard balanced experience', icon: '🙂', className: 'mood-neutral' },
+  { mood: 'joyful', label: 'Joyful', description: 'Vibrant celebration, creative sparks', icon: '😁', className: 'mood-joyful' },
 ];
