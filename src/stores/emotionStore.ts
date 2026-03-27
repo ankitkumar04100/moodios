@@ -14,9 +14,6 @@ interface EmotionStore {
   killSwitch: () => void;
   permissions: SensorPermissions;
   setPermission: (key: keyof SensorPermissions, value: string | boolean) => void;
-  isDark: boolean;
-  toggleDark: () => void;
-  setDark: (dark: boolean) => void;
   recentHistory: EmotionState[];
   addToHistory: (state: EmotionState) => void;
   shieldActive: boolean;
@@ -26,6 +23,9 @@ interface EmotionStore {
   clearNotifications: () => void;
   splashSeen: boolean;
   setSplashSeen: (seen: boolean) => void;
+  // Voice assistant
+  voicePrompt: { message: string; action: string; mood: Mood } | null;
+  setVoicePrompt: (p: { message: string; action: string; mood: Mood } | null) => void;
 }
 
 function deriveMood(e: EmotionState): Mood {
@@ -47,6 +47,7 @@ export const useEmotionStore = create<EmotionStore>()((set, get) => ({
     stressLevel: 0.3,
     energyLevel: 0.5,
     lastUpdated: Date.now(),
+    reasoning: 'Initial state — awaiting behavioral signals.',
   },
   setEmotion: (partial) => {
     const current = get().emotion;
@@ -81,9 +82,6 @@ export const useEmotionStore = create<EmotionStore>()((set, get) => ({
     wakeLock: false,
   },
   setPermission: (key, value) => set((s) => ({ permissions: { ...s.permissions, [key]: value } })),
-  isDark: typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches,
-  toggleDark: () => set((s) => ({ isDark: !s.isDark })),
-  setDark: (dark) => set({ isDark: dark }),
   recentHistory: [],
   addToHistory: (state) => set((s) => {
     const history = [...s.recentHistory, state];
@@ -101,4 +99,6 @@ export const useEmotionStore = create<EmotionStore>()((set, get) => ({
     if (typeof window !== 'undefined') localStorage.setItem('moodios-splash-seen', String(seen));
     set({ splashSeen: seen });
   },
+  voicePrompt: null,
+  setVoicePrompt: (p) => set({ voicePrompt: p }),
 }));

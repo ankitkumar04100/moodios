@@ -60,44 +60,7 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  .dark {
-    --background: 225 25% 6%;
-    --foreground: 210 30% 92%;
-    --card: 225 25% 9%;
-    --card-foreground: 210 30% 92%;
-    --popover: 225 25% 9%;
-    --popover-foreground: 210 30% 92%;
-    --primary: 200 80% 55%;
-    --primary-foreground: 225 25% 6%;
-    --secondary: 225 20% 14%;
-    --secondary-foreground: 210 30% 85%;
-    --muted: 225 20% 14%;
-    --muted-foreground: 220 15% 55%;
-    --accent: 200 80% 55%;
-    --accent-foreground: 225 25% 6%;
-    --destructive: 0 62% 40%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 225 20% 16%;
-    --input: 225 20% 16%;
-    --ring: 200 80% 55%;
-
-    --glass-bg: 225 25% 10% / 0.6;
-    --glass-border: 0 0% 100% / 0.08;
-    --glass-shadow: 200 80% 50% / 0.1;
-    --bloom-color: 200 80% 60% / 0.2;
-    --grain-opacity: 0.04;
-
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  /* ═══════ MOOD THEMES ═══════ */
+  /* ═══════ MOOD THEMES — LIGHT ONLY ═══════ */
   .mood-calm {
     --mode-primary: 175 60% 42%;
     --mode-glow: 175 55% 55%;
@@ -109,7 +72,6 @@
     --mode-motion-intensity: 0.4;
     --bloom-color: 175 60% 50% / 0.12;
   }
-  .mood-calm.dark { --mode-surface: 175 25% 10%; }
 
   .mood-focus {
     --mode-primary: 220 85% 55%;
@@ -122,7 +84,6 @@
     --mode-motion-intensity: 0.6;
     --bloom-color: 220 85% 60% / 0.18;
   }
-  .mood-focus.dark { --mode-surface: 225 30% 8%; }
 
   .mood-creative {
     --mode-primary: 320 75% 55%;
@@ -135,7 +96,6 @@
     --mode-motion-intensity: 1.2;
     --bloom-color: 320 75% 55% / 0.2;
   }
-  .mood-creative.dark { --mode-surface: 330 25% 8%; }
 
   .mood-tired {
     --mode-primary: 35 60% 50%;
@@ -147,8 +107,8 @@
     --mode-motion-duration: 2s;
     --mode-motion-intensity: 0.2;
     --bloom-color: 35 50% 50% / 0.1;
+    --background: 35 15% 95%;
   }
-  .mood-tired.dark { --mode-surface: 35 20% 8%; }
 
   .mood-motivated {
     --mode-primary: 0 75% 55%;
@@ -161,33 +121,32 @@
     --mode-motion-intensity: 1.5;
     --bloom-color: 0 75% 55% / 0.2;
   }
-  .mood-motivated.dark { --mode-surface: 0 20% 8%; }
 
   .mood-stressed {
-    --mode-primary: 260 50% 50%;
-    --mode-glow: 280 40% 60%;
-    --mode-surface: 260 20% 95%;
-    --mode-accent: 260 45% 55%;
-    --mode-gradient-start: 260 50% 50%;
-    --mode-gradient-end: 280 40% 55%;
+    --mode-primary: 210 55% 55%;
+    --mode-glow: 220 50% 65%;
+    --mode-surface: 210 25% 95%;
+    --mode-accent: 210 50% 58%;
+    --mode-gradient-start: 210 55% 55%;
+    --mode-gradient-end: 220 50% 60%;
     --mode-motion-duration: 1.8s;
     --mode-motion-intensity: 0.3;
-    --bloom-color: 260 50% 55% / 0.15;
+    --bloom-color: 210 55% 60% / 0.12;
+    --background: 210 20% 96%;
   }
-  .mood-stressed.dark { --mode-surface: 260 20% 8%; }
 
   .mood-overwhelmed {
-    --mode-primary: 230 35% 45%;
-    --mode-glow: 250 30% 55%;
+    --mode-primary: 230 35% 50%;
+    --mode-glow: 230 30% 60%;
     --mode-surface: 230 15% 94%;
-    --mode-accent: 230 30% 50%;
-    --mode-gradient-start: 230 35% 45%;
-    --mode-gradient-end: 250 30% 50%;
+    --mode-accent: 230 30% 55%;
+    --mode-gradient-start: 230 35% 50%;
+    --mode-gradient-end: 230 30% 55%;
     --mode-motion-duration: 2.5s;
     --mode-motion-intensity: 0.15;
-    --bloom-color: 230 35% 50% / 0.1;
+    --bloom-color: 230 35% 55% / 0.08;
+    --background: 230 15% 95%;
   }
-  .mood-overwhelmed.dark { --mode-surface: 230 15% 8%; }
 
   .mood-neutral {
     --mode-primary: 210 30% 50%;
@@ -200,7 +159,6 @@
     --mode-motion-intensity: 0.8;
     --bloom-color: 210 30% 55% / 0.12;
   }
-  .mood-neutral.dark { --mode-surface: 210 15% 8%; }
 
   .mood-joyful {
     --mode-primary: 45 90% 52%;
@@ -213,7 +171,6 @@
     --mode-motion-intensity: 1.4;
     --bloom-color: 45 90% 55% / 0.22;
   }
-  .mood-joyful.dark { --mode-surface: 45 30% 8%; }
 
   * {
     @apply border-border;

@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
 import { useEmotionStore } from '@/stores/emotionStore';
-import { Camera, Mic, Bell, Moon, Sun, RotateCcw, ChevronRight, Database, Cpu, ShieldCheck, Eye, EyeOff } from 'lucide-react';
+import { Camera, Mic, Bell, RotateCcw, Database, Cpu, ShieldCheck, Eye, EyeOff } from 'lucide-react';
 
 export default function SettingsPage() {
-  const { permissions, setPermission, isDark, toggleDark, sensingMode, setSensingMode } = useEmotionStore();
+  const { permissions, setPermission, sensingMode, setSensingMode } = useEmotionStore();
 
   const requestCamera = async () => {
     try {
@@ -58,37 +58,11 @@ export default function SettingsPage() {
       <div>
         <p className="text-xs text-mode-primary uppercase tracking-widest font-display">Preferences</p>
         <h1 className="font-display text-3xl font-bold text-foreground">Settings</h1>
-        <p className="text-muted-foreground mt-1 text-sm">Manage permissions, appearance, and privacy.</p>
+        <p className="text-muted-foreground mt-1 text-sm">Manage permissions, sensing engine, and privacy.</p>
       </div>
 
-      {/* Appearance */}
-      <motion.div className="glass rounded-2xl p-6 space-y-4" custom={0} variants={sectionVariants} initial="hidden" animate="visible">
-        <h3 className="font-display font-semibold text-foreground flex items-center gap-2">
-          {isDark ? <Moon size={16} className="text-mode-primary" /> : <Sun size={16} className="text-mode-primary" />}
-          Appearance
-        </h3>
-        <button
-          onClick={toggleDark}
-          className="w-full flex items-center justify-between p-3 rounded-xl hover:bg-secondary transition-colors"
-        >
-          <div className="flex items-center gap-3">
-            <div className={`w-10 h-6 rounded-full flex items-center px-0.5 transition-colors ${isDark ? 'bg-mode-primary' : 'bg-secondary'}`}>
-              <motion.div
-                className="w-5 h-5 rounded-full bg-primary-foreground shadow"
-                animate={{ x: isDark ? 16 : 0 }}
-                transition={{ type: 'spring', stiffness: 500, damping: 30 }}
-              />
-            </div>
-            <div className="text-left">
-              <p className="text-sm font-medium text-foreground">{isDark ? 'Dark Mode' : 'Light Mode'}</p>
-              <p className="text-xs text-muted-foreground">Switch between day and night themes</p>
-            </div>
-          </div>
-        </button>
-      </motion.div>
-
       {/* Sensing Mode */}
-      <motion.div className="glass rounded-2xl p-6 space-y-4" custom={1} variants={sectionVariants} initial="hidden" animate="visible">
+      <motion.div className="glass rounded-2xl p-6 space-y-4" custom={0} variants={sectionVariants} initial="hidden" animate="visible">
         <h3 className="font-display font-semibold text-foreground flex items-center gap-2">
           <Cpu size={16} className="text-mode-primary" />
           Sensing Engine
@@ -96,7 +70,7 @@ export default function SettingsPage() {
         <div className="space-y-2">
           {[
             { mode: 'real' as const, icon: Eye, label: 'Real Sensors', desc: 'Camera + Microphone for true emotion detection' },
-            { mode: 'simulation' as const, icon: EyeOff, label: 'Simulation', desc: 'Organic drift engine without sensors' },
+            { mode: 'simulation' as const, icon: EyeOff, label: 'Simulation', desc: 'Behavioral analysis without sensors' },
             { mode: 'off' as const, icon: EyeOff, label: 'Off', desc: 'Disable all sensing' },
           ].map(({ mode, icon: Icon, label, desc }) => (
             <button
@@ -117,7 +91,7 @@ export default function SettingsPage() {
       </motion.div>
 
       {/* Permissions */}
-      <motion.div className="glass rounded-2xl p-6 space-y-4" custom={2} variants={sectionVariants} initial="hidden" animate="visible">
+      <motion.div className="glass rounded-2xl p-6 space-y-4" custom={1} variants={sectionVariants} initial="hidden" animate="visible">
         <h3 className="font-display font-semibold text-foreground flex items-center gap-2">
           <ShieldCheck size={16} className="text-mode-primary" />
           Sensor Permissions
@@ -155,7 +129,7 @@ export default function SettingsPage() {
       </motion.div>
 
       {/* Privacy */}
-      <motion.div className="glass rounded-2xl p-6 space-y-4" custom={3} variants={sectionVariants} initial="hidden" animate="visible">
+      <motion.div className="glass rounded-2xl p-6 space-y-4" custom={2} variants={sectionVariants} initial="hidden" animate="visible">
         <h3 className="font-display font-semibold text-foreground flex items-center gap-2">
           <Database size={16} className="text-mode-primary" />
           Privacy & Data
