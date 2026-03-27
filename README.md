@@ -7,6 +7,10 @@
 
 ---
 
+**[MoodiOS App](https://moodios.vercel.app/)**
+
+---
+
 # 🌍 Table of Contents
 
 1. [MoodiOS — The Inspiration Behind a World-Changing Vision](#1--moodios--the-inspiration-behind-a-world-changing-vision)
