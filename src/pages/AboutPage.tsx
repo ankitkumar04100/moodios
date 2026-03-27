@@ -7,7 +7,7 @@ const sections = [
   {
     icon: Brain,
     title: 'Multimodal Emotion Sensing',
-    text: 'Facial micro-expressions, voice prosody analysis, and contextual signals fused through a neural model — all processed on-device via MediaPipe & Web Audio API.',
+    text: 'Facial micro-expressions, voice prosody analysis, typing rhythm, and contextual signals fused through a neural model — all processed on-device.',
   },
   {
     icon: Palette,
@@ -17,12 +17,12 @@ const sections = [
   {
     icon: Eye,
     title: 'Cinematic Adaptive Interface',
-    text: 'Every pixel responds to how you feel. Colors morph, particles react, and the breathing orb guides you. The UI is alive.',
+    text: 'Every pixel responds to how you feel. Colors morph, particles react in real-time via WebGL, and the breathing orb guides you. The UI is alive.',
   },
   {
     icon: Shield,
     title: 'Privacy by Design',
-    text: 'Zero data leaves your device. No cloud, no servers, no tracking. Emotion vectors stay in RAM. DuckDB-Wasm stores only anonymized aggregates.',
+    text: 'Zero data leaves your device. No cloud, no servers, no tracking. Emotion vectors stay in RAM. Only anonymized aggregates persist locally.',
   },
   {
     icon: Waves,
@@ -32,12 +32,12 @@ const sections = [
   {
     icon: Zap,
     title: 'Adaptive Performance',
-    text: 'Automatically adjusts camera resolution, sensing cadence, and particle density based on device FPS. WebGPU when available, WASM fallback.',
+    text: 'Automatically adjusts particle density, sensing cadence, and render quality based on device FPS. Runs smoothly everywhere.',
   },
   {
     icon: Cpu,
     title: 'Neural Fusion Model',
-    text: 'ONNX Runtime Web-compatible multi-layer perceptron classifies mood from 11 sensor features — no hardcoded thresholds, pure learned weights.',
+    text: 'Multi-layer perceptron classifies mood from behavioral and sensor features — no hardcoded thresholds, pure learned weights.',
   },
   {
     icon: Fingerprint,
@@ -135,18 +135,18 @@ export default function AboutPage() {
         ))}
       </div>
 
-      {/* Tech stack */}
+      {/* Philosophy */}
       <motion.div
         className="glass rounded-xl p-6 text-center"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
       >
-        <p className="font-display text-sm font-semibold text-foreground mb-3">Built With</p>
-        <div className="flex flex-wrap justify-center gap-2 text-xs text-muted-foreground">
-          {['React', 'TypeScript', 'Vite', 'Tailwind', 'Framer Motion', 'Zustand', 'MediaPipe', 'Web Audio API', 'DuckDB-Wasm', 'ONNX Runtime', 'PWA'].map(tech => (
-            <span key={tech} className="px-2.5 py-1 rounded-full bg-secondary">{tech}</span>
-          ))}
-        </div>
+        <p className="font-display text-sm font-semibold text-foreground mb-3">Our Philosophy</p>
+        <p className="text-sm text-muted-foreground max-w-lg mx-auto leading-relaxed">
+          Technology should feel human. MoodiOS adapts to your emotional state in real-time, 
+          creating an experience that's calm when you need calm, focused when you need focus, 
+          and joyful when life is good. Your emotions never leave your device.
+        </p>
       </motion.div>
 
       <div className="text-center text-xs text-muted-foreground py-6">

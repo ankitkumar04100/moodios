@@ -2,9 +2,10 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useEmotionStore } from '@/stores/emotionStore';
 import { NavLink, useLocation } from 'react-router-dom';
-import { Home, Layers, Shield, Target, Sparkles, BarChart3, Settings, Info, PauseCircle, PlayCircle, Sun, Moon, SlidersHorizontal } from 'lucide-react';
+import { Home, Layers, Shield, Target, Sparkles, BarChart3, Settings, Info, PauseCircle, PlayCircle, SlidersHorizontal } from 'lucide-react';
 import PermissionsSheet from '@/components/PermissionsSheet';
 import ParticleBackground from '@/components/ParticleBackground';
+import VoiceAssistant from '@/components/VoiceAssistant';
 
 const navItems = [
   { to: '/', icon: Home, label: 'Home' },
@@ -21,15 +22,16 @@ const sidebarExtraItems = [
 ];
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
-  const { activeMood, sensingActive, sensingMode, killSwitch, toggleSensing, isDark, toggleDark, emotion } = useEmotionStore();
+  const { activeMood, sensingActive, sensingMode, killSwitch, toggleSensing, emotion } = useEmotionStore();
   const location = useLocation();
   const [permissionsOpen, setPermissionsOpen] = useState(false);
 
   const moodClass = activeMood === 'neutral' ? '' : `mood-${activeMood}`;
 
   return (
-    <div className={`min-h-screen flex flex-col ${moodClass} ${isDark ? 'dark' : ''} film-grain`}>
+    <div className={`min-h-screen flex flex-col ${moodClass} film-grain`}>
       <ParticleBackground />
+      <VoiceAssistant />
 
       {/* Top Bar */}
       <header className="sticky top-0 z-50 glass">
@@ -58,21 +60,12 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
               </motion.div>
             )}
 
-            {/* Permissions button */}
             <button
               onClick={() => setPermissionsOpen(true)}
               className="p-2 rounded-lg hover:bg-secondary transition-colors text-muted-foreground"
               aria-label="Sensor permissions"
             >
               <SlidersHorizontal size={18} />
-            </button>
-
-            <button
-              onClick={toggleDark}
-              className="p-2 rounded-lg hover:bg-secondary transition-colors text-muted-foreground"
-              aria-label="Toggle theme"
-            >
-              {isDark ? <Sun size={18} /> : <Moon size={18} />}
             </button>
 
             <button
@@ -93,9 +86,49 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
 
       {/* Main Content */}
       <div className="flex flex-1 overflow-hidden">
-        {/* Sidebar nav (desktop) */}
+        {/* Sidebar nav (desktop) — Settings & About at bottom */}
         <nav className="hidden md:flex flex-col gap-1 p-3 w-16 lg:w-48 shrink-0">
-          {[...navItems, ...sidebarExtraItems].map(({ to, icon: Icon, label }) => (
+          {/* Main items (Home, Modes, Timeline) */}
+          {navItems.slice(0, 3).map(({ to, icon: Icon, label }) => (
+            <NavLink
+              key={to}
+              to={to}
+              className={({ isActive }) =>
+                `flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all text-sm font-medium ${
+                  isActive
+                    ? 'bg-mode-primary/15 text-mode-primary'
+                    : 'text-muted-foreground hover:text-foreground hover:bg-secondary'
+                }`
+              }
+            >
+              <Icon size={18} />
+              <span className="hidden lg:inline">{label}</span>
+            </NavLink>
+          ))}
+          
+          {/* Extra items */}
+          {sidebarExtraItems.map(({ to, icon: Icon, label }) => (
+            <NavLink
+              key={to}
+              to={to}
+              className={({ isActive }) =>
+                `flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all text-sm font-medium ${
+                  isActive
+                    ? 'bg-mode-primary/15 text-mode-primary'
+                    : 'text-muted-foreground hover:text-foreground hover:bg-secondary'
+                }`
+              }
+            >
+              <Icon size={18} />
+              <span className="hidden lg:inline">{label}</span>
+            </NavLink>
+          ))}
+          
+          {/* Spacer */}
+          <div className="flex-1" />
+          
+          {/* Settings & About at bottom */}
+          {navItems.slice(3).map(({ to, icon: Icon, label }) => (
             <NavLink
               key={to}
               to={to}
@@ -130,7 +163,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
         </main>
       </div>
 
-      {/* Bottom nav (mobile/tablet) — ALL 5 tabs always visible */}
+      {/* Bottom nav (mobile/tablet) */}
       <nav className="md:hidden sticky bottom-0 z-50 glass flex justify-around py-1.5 px-2">
         {navItems.map(({ to, icon: Icon, label }) => (
           <NavLink

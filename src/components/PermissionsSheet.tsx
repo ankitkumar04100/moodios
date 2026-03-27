@@ -105,7 +105,6 @@ export default function PermissionsSheet({ open, onOpenChange }: PermissionsShee
         </SheetHeader>
 
         <div className="mt-6 space-y-3">
-          {/* Enable Real Sensing CTA */}
           <button
             onClick={enableRealSensing}
             className="w-full p-4 rounded-xl bg-gradient-to-r from-mode-primary/20 to-mode-glow/20 border border-mode-primary/30 text-left hover:from-mode-primary/30 hover:to-mode-glow/30 transition-all"
@@ -122,7 +121,6 @@ export default function PermissionsSheet({ open, onOpenChange }: PermissionsShee
             </div>
           </button>
 
-          {/* Individual permissions */}
           {items.map(({ key, icon: Icon, label, desc, action }) => {
             const state = permissions[key] as string;
             return (
@@ -142,7 +140,7 @@ export default function PermissionsSheet({ open, onOpenChange }: PermissionsShee
                     </div>
                     <p className="text-xs text-muted-foreground mt-1">{desc}</p>
                     {state === 'denied' && (
-                      <p className="text-xs text-amber-600 dark:text-amber-400 mt-2 flex items-center gap-1">
+                      <p className="text-xs text-amber-600 mt-2 flex items-center gap-1">
                         <AlertCircle size={12} />
                         Open browser settings → Site Settings → re-enable {label.toLowerCase()}
                       </p>

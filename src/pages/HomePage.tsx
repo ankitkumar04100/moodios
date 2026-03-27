@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useEmotionStore } from "@/stores/emotionStore";
-import { Zap, Brain, Activity, Target, Sparkles, PlayCircle, Shield, Camera, AlertTriangle, TrendingUp, Clock } from "lucide-react";
+import { Zap, Brain, Activity, Target, Sparkles, PlayCircle, Shield, Camera, AlertTriangle, TrendingUp, Clock, MessageCircle } from "lucide-react";
 import PermissionsSheet from "@/components/PermissionsSheet";
 import BreathingOrb from "@/components/BreathingOrb";
 import HeartbeatPulse from "@/components/HeartbeatPulse";
@@ -50,13 +50,12 @@ export default function HomePage() {
             <p className="text-muted-foreground mt-1.5 max-w-md">
               {sensingActive
                 ? sensingMode === 'simulation'
-                  ? 'Simulation active — grant camera/mic for real sensing'
+                  ? 'Behavioral simulation active — grant camera/mic for real sensing'
                   : 'Real-time emotion sensing active'
                 : 'Tap Sense to activate your emotional engine'}
             </p>
           </div>
           
-          {/* Heartbeat + mood badge */}
           <div className="flex items-center gap-3">
             <HeartbeatPulse />
             {sensingActive && (
@@ -71,6 +70,22 @@ export default function HomePage() {
           </div>
         </div>
       </motion.div>
+
+      {/* Reasoning Banner */}
+      {sensingActive && emotion.reasoning && (
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="flex items-start gap-3 p-4 rounded-xl glass border-mode-primary/20"
+        >
+          <MessageCircle size={16} className="text-mode-primary shrink-0 mt-0.5" />
+          <div>
+            <p className="text-xs font-display font-semibold text-mode-primary uppercase tracking-wider">Why this mood?</p>
+            <p className="text-sm text-foreground mt-1">{emotion.reasoning}</p>
+            <p className="text-xs text-muted-foreground mt-1">Confidence: {Math.round(emotion.confidence * 100)}%</p>
+          </div>
+        </motion.div>
+      )}
 
       {/* Simulation Banner */}
       {sensingActive && sensingMode === 'simulation' && (
@@ -145,7 +160,6 @@ export default function HomePage() {
       {/* Breathing Orb + Stats row */}
       {sensingActive && (
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {/* Breathing widget */}
           <motion.div
             className="glass rounded-2xl p-6 flex flex-col items-center justify-center"
             initial={{ opacity: 0, scale: 0.95 }}
@@ -158,7 +172,6 @@ export default function HomePage() {
             </p>
           </motion.div>
 
-          {/* Live bars */}
           <motion.div
             className="glass p-5 rounded-2xl space-y-4"
             initial={{ opacity: 0 }}

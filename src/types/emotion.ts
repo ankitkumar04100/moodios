@@ -6,6 +6,7 @@ export interface EmotionState {
   stressLevel: number;
   energyLevel: number;
   lastUpdated: number;
+  reasoning?: string;
 }
 
 export interface SensorPermissions {
