@@ -72,7 +72,11 @@ export async function pushSample(
   confidence: number,
   source: string = 'simulation'
 ): Promise<void> {
-  currentBatch.push({ mood, stress, energy, confidence, source });
+  // Guard against NaN values which break SQL inserts
+  const safeStress = Number.isFinite(stress) ? stress : 0;
+  const safeEnergy = Number.isFinite(energy) ? energy : 0;
+  const safeConf = Number.isFinite(confidence) ? confidence : 0;
+  currentBatch.push({ mood, stress: safeStress, energy: safeEnergy, confidence: safeConf, source });
 
   // Flush every 60 seconds (minute-level aggregation)
   const now = Date.now();
