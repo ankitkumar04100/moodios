@@ -2,10 +2,12 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useEmotionStore } from '@/stores/emotionStore';
 import { NavLink, useLocation } from 'react-router-dom';
-import { Home, Layers, Shield, Target, Sparkles, BarChart3, Settings, Info, PauseCircle, PlayCircle, SlidersHorizontal } from 'lucide-react';
+import { Home, Layers, Shield, Target, Sparkles, BarChart3, Settings, Info, PauseCircle, PlayCircle, SlidersHorizontal, Volume2, VolumeX } from 'lucide-react';
 import PermissionsSheet from '@/components/PermissionsSheet';
 import ParticleBackground from '@/components/ParticleBackground';
 import VoiceAssistant from '@/components/VoiceAssistant';
+import { useSoundscape } from '@/hooks/useSoundscape';
+import { enableSoundscape, disableSoundscape, isSoundscapeEnabled } from '@/core/audio/soundscapeEngine';
 
 const navItems = [
   { to: '/', icon: Home, label: 'Home' },
@@ -25,6 +27,8 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
   const { activeMood, sensingActive, sensingMode, killSwitch, toggleSensing, emotion } = useEmotionStore();
   const location = useLocation();
   const [permissionsOpen, setPermissionsOpen] = useState(false);
+  const [soundOn, setSoundOn] = useState(false);
+  useSoundscape();
 
   const moodClass = activeMood === 'neutral' ? '' : `mood-${activeMood}`;
 
