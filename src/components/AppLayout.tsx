@@ -65,6 +65,17 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
             )}
 
             <button
+              onClick={() => {
+                if (soundOn) { disableSoundscape(); setSoundOn(false); }
+                else { enableSoundscape(); setSoundOn(true); }
+              }}
+              className="p-2 rounded-lg hover:bg-secondary transition-colors text-muted-foreground"
+              aria-label={soundOn ? 'Disable soundscape' : 'Enable soundscape'}
+            >
+              {soundOn ? <Volume2 size={18} /> : <VolumeX size={18} />}
+            </button>
+
+            <button
               onClick={() => setPermissionsOpen(true)}
               className="p-2 rounded-lg hover:bg-secondary transition-colors text-muted-foreground"
               aria-label="Sensor permissions"
