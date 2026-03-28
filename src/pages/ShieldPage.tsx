@@ -6,11 +6,16 @@ import BreathingOrb from '@/components/BreathingOrb';
 export default function ShieldPage() {
   const { shieldActive, setShieldActive, queuedNotifications, clearNotifications, emotion, addNotification } = useEmotionStore();
 
+  // Deterministic test notifications — cycles through list based on count
+  const testNotifs = [
+    { title: 'New Message', body: 'You have a new notification' },
+    { title: 'Calendar Reminder', body: 'Meeting in 15 minutes' },
+    { title: 'App Update', body: 'Version 2.0 available' },
+    { title: 'Social Alert', body: 'Someone liked your post' },
+  ];
   const testNotification = () => {
-    addNotification({
-      title: ['New Message', 'Calendar Reminder', 'App Update', 'Social Alert'][Math.floor(Math.random() * 4)],
-      body: ['You have a new notification', 'Meeting in 15 minutes', 'Version 2.0 available', 'Someone liked your post'][Math.floor(Math.random() * 4)],
-    });
+    const idx = queuedNotifications.length % testNotifs.length;
+    addNotification(testNotifs[idx]);
   };
 
   return (

@@ -47,9 +47,12 @@ export default function CreativePage() {
   const [currentPrompt, setCurrentPrompt] = useState(inspirationPrompts[0]);
   const [activePalette, setActivePalette] = useState(0);
 
+  // Deterministic prompt cycling — no randomness
+  const [promptIndex, setPromptIndex] = useState(0);
   const shufflePrompt = () => {
-    const next = inspirationPrompts[Math.floor(Math.random() * inspirationPrompts.length)];
-    setCurrentPrompt(next);
+    const nextIdx = (promptIndex + 1) % inspirationPrompts.length;
+    setPromptIndex(nextIdx);
+    setCurrentPrompt(inspirationPrompts[nextIdx]);
   };
 
   const addSpark = () => {
