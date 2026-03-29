@@ -1,7 +1,7 @@
 import { ContextFeatures } from "./types";
 
 let switches = 0;
-let pointerMovements: number[] = [];
+let pointerMovements: number[] = []; 
 let scrollEvents: number[] = [];
 let idleStart = Date.now();
 
