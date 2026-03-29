@@ -1,5 +1,5 @@
 const CACHE_NAME = 'moodios-v1';
-const PRECACHE = ['/', '/index.html'];
+const PRECACHE = ['/', '/index.html']; 
 
 self.addEventListener('install', (e) => {
   e.waitUntil(
