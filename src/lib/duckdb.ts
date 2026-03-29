@@ -4,7 +4,7 @@
  * Supports queries and CSV export.
  */
 
-import * as duckdb from '@duckdb/duckdb-wasm';
+import * as duckdb from '@duckdb/duckdb-wasm'; 
 
 let db: duckdb.AsyncDuckDB | null = null;
 let conn: duckdb.AsyncDuckDBConnection | null = null;
