@@ -11,7 +11,7 @@ export function extractVoiceFeatures(audioBuffer: Float32Array): VoiceFeatures {
   energy /= N;
 
   const pitch = estimatePitch(audioBuffer);
-  const { jitter, shimmer } = estimateJitterShimmer(audioBuffer);
+  const { jitter, shimmer } = estimateJitterShimmer(audioBuffer); 
 
   return {
     mfcc: computeMFCC(audioBuffer),
