@@ -1,5 +1,5 @@
 import { useEmotionStore } from '@/stores/emotionStore';
-import { Camera, Mic, Bell, Monitor, ChevronRight, AlertCircle, CheckCircle2, XCircle } from 'lucide-react';
+import { Camera, Mic, Bell, Monitor, ChevronRight, AlertCircle, CheckCircle2, XCircle } from 'lucide-react'; 
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from '@/components/ui/sheet';
 
 interface PermissionsSheetProps {
