@@ -9,7 +9,7 @@
 
 **[MoodiOS App](https://moodios.lovable.app)**
 
-**[MoodiOS Presentation](https://lpuin-my.sharepoint.com/:p:/g/personal/ankit_kumar202563_lpu_in/IQAAXR8L8ocbQK8g1_BWsxv-AZ02QMF3CDrBzhJVpdGCswA?e=ue1v0U)**
+**[MoodiOS Presentation](https://1drv.ms/p/c/6a76ef0b95b83422/IQAHRRSr7p8qSqcoIrrPxTOcAcuseUAPlp9k2o1S1110CEA?e=EwrdnS)**
 
 ---
 
