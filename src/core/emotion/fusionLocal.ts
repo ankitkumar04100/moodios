@@ -4,7 +4,7 @@ export function fuseLocal(input: FusionInput): EmotionVector {
   const stress =
     input.face.browTension * 0.4 +
     input.voice.jitter * 0.3 +
-    input.typing.pauseFrequency * 0.2 +
+    input.typing.pauseFrequency * 0.2 + 
     input.context.appSwitchRate * 0.1;
 
   const energy =
