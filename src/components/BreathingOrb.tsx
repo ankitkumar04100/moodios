@@ -6,7 +6,7 @@ interface BreathingOrbProps {
   className?: string;
 }
 
-export default function BreathingOrb({ size = 200, className = '' }: BreathingOrbProps) {
+export default function BreathingOrb({ size = 200, className = '' }: BreathingOrbProps) { 
   const { emotion, activeMood } = useEmotionStore();
   
   // Breathing rate adapts: higher stress = slower, deeper breaths
