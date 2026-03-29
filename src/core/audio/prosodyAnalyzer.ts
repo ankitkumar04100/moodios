@@ -1,6 +1,6 @@
 /**
  * Web Audio API Prosody Analyzer
- * Extracts RMS energy, spectral centroid, and rhythmicity from a live mic stream.
+ * Extracts RMS energy, spectral centroid, and rhythmicity from a live mic stream. 
  * No audio is recorded or stored — only numerical features are kept in memory.
  */
 
