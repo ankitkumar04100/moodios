@@ -7,7 +7,7 @@ export default function VoiceAssistant() {
   
   const handleAccept = () => {
     if (voicePrompt) {
-      setMoodOverride(voicePrompt.mood === 'stressed' ? 'calm' : voicePrompt.mood === 'overwhelmed' ? 'calm' : null);
+      setMoodOverride(voicePrompt.mood === 'stressed' ? 'calm' : voicePrompt.mood === 'overwhelmed' ? 'calm' : null); 
     }
     setVoicePrompt(null);
   };
