@@ -7,7 +7,7 @@ export default function SettingsPage() {
 
   const requestCamera = async () => {
     try {
-      const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+      const stream = await navigator.mediaDevices.getUserMedia({ video: true }); 
       stream.getTracks().forEach((t) => t.stop());
       setPermission('camera', 'granted');
     } catch {
