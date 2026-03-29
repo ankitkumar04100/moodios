@@ -1,6 +1,6 @@
 import { FaceFeatures } from "./types";
 
-export async function extractFaceFeatures(landmarks: any): Promise<FaceFeatures> {
+export async function extractFaceFeatures(landmarks: any): Promise<FaceFeatures> { 
   if (!landmarks) {
     return {
       browTension: 0,
