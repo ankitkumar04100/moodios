@@ -3,7 +3,7 @@ import type { Mood, EmotionState, SensorPermissions } from '@/types/emotion';
 
 interface EmotionStore {
   emotion: EmotionState;
-  setEmotion: (state: Partial<EmotionState>) => void;
+  setEmotion: (state: Partial<EmotionState>) => void; 
   activeMood: Mood;
   moodOverride: Mood | null;
   setMoodOverride: (mood: Mood | null) => void;
