@@ -4,7 +4,7 @@
  * When a real ONNX model is available, this can be swapped for ORT Web inference.
  */
 
-import type { Mood } from '@/types/emotion';
+import type { Mood } from '@/types/emotion'; 
 
 interface FusionInput {
   // Face features
