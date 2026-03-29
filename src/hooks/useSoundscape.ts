@@ -5,7 +5,7 @@
 
 import { useEffect } from 'react';
 import { useEmotionStore } from '@/stores/emotionStore';
-import { transitionTo, destroySoundscape } from '@/core/audio/soundscapeEngine';
+import { transitionTo, destroySoundscape } from '@/core/audio/soundscapeEngine'; 
 
 export function useSoundscape() {
   const activeMood = useEmotionStore((s) => s.activeMood);
