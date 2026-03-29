@@ -9,7 +9,7 @@ Object.defineProperty(window, "matchMedia", {
     addListener: () => {},
     removeListener: () => {},
     addEventListener: () => {},
-    removeEventListener: () => {},
+    removeEventListener: () => {}, 
     dispatchEvent: () => {},
   }),
 });
