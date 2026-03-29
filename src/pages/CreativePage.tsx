@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion'; 
 import { Sparkles, Plus, X, Download, Lightbulb, Palette, Shuffle, Wand2 } from 'lucide-react';
 
 interface Spark {
