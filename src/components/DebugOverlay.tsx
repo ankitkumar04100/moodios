@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useEmotionStore } from '@/stores/emotionStore';
 import { Bug, X, ChevronDown, ChevronUp } from 'lucide-react';
-
+ 
 export default function DebugOverlay() {
   const [open, setOpen] = useState(false);
   const [expanded, setExpanded] = useState(false);
