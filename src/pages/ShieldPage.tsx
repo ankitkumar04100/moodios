@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useEmotionStore } from '@/stores/emotionStore';
 import { Shield, ShieldCheck, ShieldOff, Bell, BellOff, Trash2, Info, Clock, TrendingDown } from 'lucide-react';
-import BreathingOrb from '@/components/BreathingOrb';
+import BreathingOrb from '@/components/BreathingOrb'; 
 
 export default function ShieldPage() {
   const { shieldActive, setShieldActive, queuedNotifications, clearNotifications, emotion, addNotification } = useEmotionStore();
