@@ -1,7 +1,7 @@
 /**
  * Emotion-Adaptive Soundscape Engine
  * Uses Web Audio API oscillators and noise generators.
- * Smooth crossfades between mood soundscapes — no abrupt changes.
+ * Smooth crossfades between mood soundscapes — no abrupt changes. 
  * 
  * Soundscapes:
  * - Calm → soft rain (filtered noise)
