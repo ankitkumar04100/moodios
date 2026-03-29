@@ -1,7 +1,7 @@
 import { FusionInput, EmotionVector } from "./types";
 import { fuseLocal } from "./fusionLocal";
 import { fuseCloud } from "./fusionCloud";
-
+ 
 export async function fuseEmotion(
   input: FusionInput,
   useCloud: boolean
