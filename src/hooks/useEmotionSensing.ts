@@ -1,6 +1,6 @@
 import { useEffect, useRef, useCallback } from 'react';
 import { useEmotionStore } from '@/stores/emotionStore';
-import { adaptivePolicy, perfBudgeter } from '@/lib/adaptive';
+import { adaptivePolicy, perfBudgeter } from '@/lib/adaptive'; 
 import { pushSample, flushBatch } from '@/lib/duckdb';
 import type { Mood } from '@/types/emotion';
 
