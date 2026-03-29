@@ -7,7 +7,7 @@ import PermissionsSheet from '@/components/PermissionsSheet';
 import ParticleBackground from '@/components/ParticleBackground';
 import VoiceAssistant from '@/components/VoiceAssistant';
 import { useSoundscape } from '@/hooks/useSoundscape';
-import { enableSoundscape, disableSoundscape, isSoundscapeEnabled } from '@/core/audio/soundscapeEngine';
+import { enableSoundscape, disableSoundscape, isSoundscapeEnabled } from '@/core/audio/soundscapeEngine'; 
 
 const navItems = [
   { to: '/', icon: Home, label: 'Home' },
