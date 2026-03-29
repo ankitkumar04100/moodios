@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useEmotionStore } from '@/stores/emotionStore';
 import { MOOD_THEMES } from '@/types/emotion';
-import type { Mood } from '@/types/emotion';
+import type { Mood } from '@/types/emotion'; 
 import { Lock, Unlock, Cpu, Sparkles } from 'lucide-react';
 
 const moodEmojiBg: Record<Mood, string> = {
