@@ -4,7 +4,7 @@
  * No frames are stored — only numerical features are kept in memory.
  */
 
-import { FaceLandmarker, FilesetResolver, type FaceLandmarkerResult } from '@mediapipe/tasks-vision';
+import { FaceLandmarker, FilesetResolver, type FaceLandmarkerResult } from '@mediapipe/tasks-vision'; 
 
 export interface FaceFeatures {
   browTension: number;
