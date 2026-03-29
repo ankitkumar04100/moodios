@@ -1,6 +1,6 @@
 /**
  * Adaptive Engine — No hardcoded constants.
- * Rolling statistics, streaming quantiles, and performance budgeting.
+ * Rolling statistics, streaming quantiles, and performance budgeting. 
  */
 
 // ──── EMA (Exponential Moving Average) ────
