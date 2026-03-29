@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useEmotionStore } from "@/stores/emotionStore";
-import { Zap, Brain, Activity, Target, Sparkles, PlayCircle, Shield, Camera, AlertTriangle, TrendingUp, Clock, MessageCircle } from "lucide-react";
+import { Zap, Brain, Activity, Target, Sparkles, PlayCircle, Shield, Camera, AlertTriangle, TrendingUp, Clock, MessageCircle } from "lucide-react"; 
 import PermissionsSheet from "@/components/PermissionsSheet";
 import BreathingOrb from "@/components/BreathingOrb";
 import HeartbeatPulse from "@/components/HeartbeatPulse";
