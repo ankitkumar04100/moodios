@@ -8,7 +8,7 @@ import SplashScreen from "@/components/SplashScreen";
 import DebugOverlay from "@/components/DebugOverlay";
 import InstallBanner from "@/components/InstallBanner";
 import { useEmotionSensing } from "@/hooks/useEmotionSensing";
-import { useRealSensing } from "@/hooks/useRealSensing";
+import { useRealSensing } from "@/hooks/useRealSensing"; 
 import HomePage from "./pages/HomePage";
 import ModesPage from "./pages/ModesPage";
 import ShieldPage from "./pages/ShieldPage";
