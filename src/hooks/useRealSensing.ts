@@ -6,7 +6,7 @@
 
 import { useEffect, useRef, useCallback } from 'react';
 import { useEmotionStore } from '@/stores/emotionStore';
-import { ProsodyAnalyzer, type ProsodyFeatures } from '@/core/audio/prosodyAnalyzer';
+import { ProsodyAnalyzer, type ProsodyFeatures } from '@/core/audio/prosodyAnalyzer'; 
 import { FaceLandmarkerEngine, type FaceFeatures } from '@/core/vision/faceLandmarker';
 import { adaptivePolicy, perfBudgeter } from '@/lib/adaptive';
 import { pushSample } from '@/lib/duckdb';
