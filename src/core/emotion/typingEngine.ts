@@ -8,7 +8,7 @@ let pauseTimes: number[] = [];
 export function handleKeyDown() {
   const now = performance.now();
   if (lastTimestamp !== 0) {
-    flightTimes.push(now - lastTimestamp);
+    flightTimes.push(now - lastTimestamp); 
   }
   lastTimestamp = now;
 }
