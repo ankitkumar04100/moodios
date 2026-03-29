@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useEmotionStore } from '@/stores/emotionStore';
 
 export default function SplashScreen() {
-  const { splashSeen, setSplashSeen } = useEmotionStore();
+  const { splashSeen, setSplashSeen } = useEmotionStore(); 
   const [show, setShow] = useState(!splashSeen);
   const [phase, setPhase] = useState(0);
 
