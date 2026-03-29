@@ -4,7 +4,7 @@ import { useEmotionStore } from '@/stores/emotionStore';
 import { perfBudgeter } from '@/lib/adaptive';
 import * as THREE from 'three';
 
-const MOOD_COLORS: Record<string, [number, number, number]> = {
+const MOOD_COLORS: Record<string, [number, number, number]> = { 
   calm: [0.3, 0.75, 0.7],
   focus: [0.35, 0.5, 0.85],
   creative: [0.85, 0.4, 0.7],
