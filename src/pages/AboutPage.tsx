@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Heart, Shield, Brain, Eye, Zap, Cpu, Fingerprint, Waves, Palette } from 'lucide-react';
 import { useEmotionStore } from '@/stores/emotionStore';
-import { MOOD_THEMES } from '@/types/emotion';
+import { MOOD_THEMES } from '@/types/emotion'; 
 
 const sections = [
   {
