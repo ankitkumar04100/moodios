@@ -2,7 +2,7 @@ export interface FaceFeatures {
   browTension: number;
   eyeOpenness: number;
   lipCompression: number;
-  microExpressionIntensity: number;
+  microExpressionIntensity: number; 
   attention: number;
 }
 
