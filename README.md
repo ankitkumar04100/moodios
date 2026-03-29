@@ -7,7 +7,7 @@
 
 ---
 
-**[MoodiOS App](https://moodios.vercel.app/)**
+**[MoodiOS App](https://moodios.lovable.app)**
 
 ---
 
