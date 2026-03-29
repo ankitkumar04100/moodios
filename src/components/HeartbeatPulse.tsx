@@ -3,7 +3,7 @@ import { useEmotionStore } from '@/stores/emotionStore';
 import { Heart } from 'lucide-react';
 
 export default function HeartbeatPulse() {
-  const { emotion, sensingActive } = useEmotionStore();
+  const { emotion, sensingActive } = useEmotionStore(); 
   
   if (!sensingActive) return null;
 
