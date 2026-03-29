@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useEmotionStore } from '@/stores/emotionStore';
-import { Target, Play, Pause, RotateCcw, Maximize, Minimize, Clock, Zap, Volume2, VolumeX, Wind } from 'lucide-react';
+import { Target, Play, Pause, RotateCcw, Maximize, Minimize, Clock, Zap, Volume2, VolumeX, Wind } from 'lucide-react'; 
 import BreathingOrb from '@/components/BreathingOrb';
 
 const AMBIENT_SOUNDS = [
