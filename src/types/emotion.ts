@@ -11,7 +11,7 @@ export interface EmotionState {
 
 export interface SensorPermissions {
   camera: PermissionState | 'not-requested';
-  microphone: PermissionState | 'not-requested';
+  microphone: PermissionState | 'not-requested'; 
   notifications: NotificationPermission | 'not-requested';
   wakeLock: boolean;
 }
