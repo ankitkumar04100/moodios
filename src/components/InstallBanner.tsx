@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { usePWA } from '@/hooks/usePWA';
 
 export default function InstallBanner() {
-  const { canInstall, isInstalled, install } = usePWA();
+  const { canInstall, isInstalled, install } = usePWA(); 
   const [dismissed, setDismissed] = useState(false);
 
   if (!canInstall || isInstalled || dismissed) return null;
